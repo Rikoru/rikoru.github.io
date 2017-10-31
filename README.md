@@ -1,2 +1,2 @@
-# rikoru.github.io
-Mircea's Personal Site
+# [rikoru.github.io](rikoru.github.io)
+My personal site :)
