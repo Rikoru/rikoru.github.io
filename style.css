@@ -1,0 +1,247 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #333333;
+}
+
+h1, h2, h3, p, li, a {
+	color: #323232;
+}
+
+h1, h2, h3 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.4em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+p, li {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrap {
+	margin: auto;
+	min-width: 400px;
+	max-width: 900px;
+	height: 100%;
+	padding: 0;
+	background: #AAAAAA;
+	overflow: hidden;
+	box-shadow: 0 0 20px 15px rgba(0,0,0,0.25);
+}
+
+.header, .section, .footer {
+	background: #F1EEE0;
+}
+
+.header {
+	padding: 1em;
+	margin-bottom: 2em;
+	box-shadow: 0 5px 15px 10px rgba(0,0,0,0.25);
+}
+
+.header ul {
+	text-align: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.header ul li {
+	display: inline-block;
+	margin: auto;
+	padding: 0 0.5em 0 0.5em;
+	font-size: 1.6em;
+}
+
+.section {
+	margin: 1em;
+	margin-bottom: 2em;
+	padding: 1.6em;
+	box-shadow: 0 5px 10px 5px rgba(0,0,0,0.25);
+}
+
+.footer {
+	box-shadow: 0 -5px 10px 5px rgba(0,0,0,0.25); 
+	margin-bottom: 0;
+	padding: 1px;
+	text-align: center;
+}
+
+.footer a {
+	font-weight: 700;
+}
+
+/* Face creation is difficult */
+.face-box {
+	position: relative;
+	display: block;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 100%;
+	background: none;
+	z-index: 1;
+}
+
+.face-bg {
+	overflow: hidden;
+	background: #E3F3E6;
+	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+}
+
+.head, .ear-left, .ear-right, .eye-left, .eye-right, .glasses, .glasses-right, .glasses-centre, .glasses-left, .hair, .mouth, .tongue, .neck, .shirt {
+	position: relative;
+}
+
+.head {
+	background: #F2CFBF;
+	border-radius: 100%;
+	height: 150px;
+	width: 130px;
+	z-index: 20;
+	margin: auto;
+	top: -140px;
+}
+
+.hair {
+	background: #634333;
+	border-radius: 100%;
+	height: 140px;
+	width: 140px;
+	top: -10px;
+	margin: auto;
+}
+
+.hair-top {
+	background: #634333;
+	border-radius: 100% 30% 100% 100%;
+	height: 40px;
+	width: 110px;
+	margin: auto;
+	top: -60px;
+}
+
+.ear-left, .ear-right {
+	border-radius: 100%;
+	background: #E2BFAF;
+	z-index: 11;
+	height: 40px;
+	width: 40px;
+}
+
+.ear-left {
+	top: 140px;
+	left: 70px;
+}
+
+.ear-right {
+	top: 100px;
+	left: 190px;
+}
+
+.eye-left, .eye-right {
+	background: #AFAF63;
+	border-radius: 40%;
+	height: 20px;
+	width: 10px;
+}
+
+.eye-left {
+	top: 20px;
+	left: 30px;
+}
+
+.eye-right {
+	top: 0px;
+	left: 90px;
+}
+
+.mouth {
+	background: #222222;
+	top: 20px;
+	height: 20px;
+	width: 40px;
+	margin: auto;
+	border-radius: 0 0 150px 150px;
+	overflow: hidden;
+}
+
+.tongue {
+	background: #F3A3A3;
+	top: 10px;
+	height: 40px;
+	margin: auto;
+	border-radius: 100%
+}
+
+.glasses, .glasses-left, .glasses-centre, .glasses-right {
+	z-index: 33;
+}
+
+.glasses {
+	top: -50px;
+}
+
+.glasses-centre {
+	background: #232323;
+	height: 6px;
+	width: 30px;
+	top: -24px;
+	margin: auto;
+}
+
+.glasses-left, .glasses-right {
+	border-color: #232323;
+	width: 30px;
+	height: 30px;
+	border-width: 5px;
+	border-style: solid;
+	background: transparent;
+	border-radius: 100%;
+}
+
+.glasses-left {
+	top: 0;
+	left: 14px;
+}
+
+.glasses-right {
+	top: -46px;
+	left: 76px;
+}
+.neck {
+	border-radius: 40%;
+	height: 30px;
+	width: 20px;
+	z-index: 11;
+	margin: auto;
+	top: -150px;
+	background: #E2BFAF;
+}
+
+.shirt {
+	border-radius: 100%;
+	height: 200px;
+	width: 120px;
+	z-index: 10;
+	margin: auto;
+	top: -166px;
+	background: #93B3F3;
+}
