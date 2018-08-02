@@ -8,7 +8,7 @@ h1, h2, h3, p, li, a {
 	color: #2d2d2d;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .top-button {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -19,7 +19,7 @@ h1 {
 	font-size: 2.4em;
 }
 
-h2 {
+h2, .top-button {
 	font-size: 2em;
 }
 
@@ -42,7 +42,7 @@ a {
 	margin: auto;
 	min-width: 400px;
 	max-width: 900px;
-	height: 100%;
+	min-height: 100vh;
 	padding: 0;
 	background: #d3d0c8;
 	overflow: hidden;
@@ -80,12 +80,18 @@ a {
 
 .footer {
 	margin-bottom: 0;
-	/* padding: 1px; */
 	text-align: center;
 }
 
-.footer a {
-	font-weight: 700;
+.top-button {
+	background: #6699cc;
+	height: 1.5em;
+	width: 1.5em;
+	text-align: center;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
 }
 
 /* Face creation is difficult */
@@ -165,17 +171,17 @@ a {
 	background: #393939;
 	border-radius: 50%;
 	height: 20px;
-	width: 10px;
+	width: 20px;
 }
 
 .eye-left {
 	top: 20px;
-	left: 30px;
+	left: 24px;
 }
 
 .eye-right {
 	top: 0px;
-	left: 90px;
+	left: 85px;
 }
 
 .mouth {
