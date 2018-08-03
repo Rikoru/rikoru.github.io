@@ -7,6 +7,7 @@ MAIN = main
 ETC = etc
 
 all: main etc
+	@echo 'Build succeeded'
 
 main:
 	@cat $(SRC){$(HEADER),$(MAIN),$(FOOTER)}.html > ./index.html
