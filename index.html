@@ -3,82 +3,62 @@
 <head>
 	<title>Mircea Taras</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Raleway:400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Raleway:400,600|Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="wrap">
 	<div class="header">
+		<div class="img-face"></div>
 		<h1><a href="./index#">Mircea Taras</a></h1>
 		<ul>
-			<li><a href="./index#about">About</a></li>
-      <li><a href="./index#projects">Projects</a></li>
-      <li><a href="./etc">Etc</a></li>
+			<li><a href="./index#about"><i class="material-icons" aria-hidden="true">person</i> About</a></li>
+      <li><a href="./index#projects"><i class="material-icons" aria-hidden="true">code</i> Projects</a></li>
+      <li><a href="./etc"><i class="material-icons" aria-hidden="true">edit</i> Etc</a></li>
 		</ul>
-	</div><div class="face-box">
-	<div class="face-bg">
-	<a href="#">
-		<div class="ear-left"></div>
-		<div class="ear-right"></div>
-		<div class="hair"></div>
-		<div class="head">
-			<div class="hair-top"></div>
-			<div class="eye-left"></div>
-			<div class="eye-right"></div>
-			<div class="mouth">
-				<div class="tongue"></div>
-			</div>
-			<div class="glasses">
-				<div class="glasses-left"></div>
-				<div class="glasses-centre"></div>
-				<div class="glasses-right"></div>
-			</div>
-		</div>
-		<div class="neck"></div>
-		<div class="shirt"></div>
-	</a>
-	</div>
-</div>
-
-<div id="about" class="section">
+	</div><div id="about" class="section">
 	<h2>
-		<a href="#about">About</a>
+		<a href="#about"><i class="material-icons">person</i> About</a>
 	</h2>
 	<p>
-		I'm a fourth year computing science student at 
+		Hi, I'm Mircea. I recently graduated from 
 		<a href="https://sfu.ca">SFU</a> in Burnaby, BC. 
-		I have experience with full-stack software development, 
-		as well as manual and automated QA testing. 
-		Sometimes I distract myself from my schoolwork with leathercraft, 
-		doodling, and weightlifting &ndash; but not at the same time.
+		I have experience with full-stack software development 
+		in Angular and PHP, as well as manual and automated QA testing.
+		I have some data analysis experience with Python, R, and Matlab,
+		and general programming experience with C++, C, and Ruby on Rails.
+		I like to keep busy with leathercraft, doodling, 
+		and weightlifting &ndash; but not at the same time.
 	</p>
 </div>
 <div id="projects" class="section">
-	<h2><a href="#projects">Projects</a></h2>
+	<h2><a href="#projects"><i class="material-icons">code</i> Projects</a></h2>
 	<p>Some of the personal projects I've worked on (or am working on) include:</p>
-	<div class="project-list">
-
-		<div class="project">
+	<ul class="project-list">
+		<li>
 			<a href="https://github.com/Rikoru/PasswordGenerator">
+				<i class="material-icons" aria-hidden="true">lock</i>&nbsp;
 				Passgen - password generator (C++)
 			</a>
-		</div>
-		<div class="project">
+		</li>
+		<li>
 			<a href="https://github.com/Rikoru/SimpleCount">
+				<i class="material-icons" aria-hidden="true">watch</i>&nbsp;
 				SimpleCount - tally counter (C++)
 			</a>
-		</div>
-		<div class="project">
+		</li>
+		<li>
 			<a href="https://github.com/Rikoru/rikoru.github.io">
-				rikoru.github.io - this website (drawing with CSS is tricky)
+				<i class="material-icons" aria-hidden="true">person_pin</i>&nbsp;
+				rikoru.github.io - this website (HTML &amp; CSS)
 			</a>
-		</div>
-	</div>
+		</li>
+	</ul>
 </div>
 <div class="footer">
   <p>This site uses the <a href="https://opensource.org/licenses/MIT">MIT License</a>, modify it as you like.</p>
+  <p>Special thanks to my friend Tuesday for the doodle of me.</p>
 </div>
-<a class="top-button" href="#">&#11205;</a>
 </div>
 </body>
 </html>

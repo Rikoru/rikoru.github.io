@@ -1,11 +1,35 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #393939;
+	background: #ccc;
 }
 
-h1, h2, h3, p, li, a {
-	color: #2d2d2d;
+.header {
+	padding: 1rem;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header>* {
+	flex: 1 1 auto;
+}
+
+h1, h2, h3, a {
+	color: #6699CC;
+}
+
+li i.material-icons {
+	font-size: 1.2rem;
+}
+
+li a {
+	color: #48646E;
+}
+
+p {
+	color: #393939;
 }
 
 h1, h2, h3, .top-button a {
@@ -15,48 +39,52 @@ h1, h2, h3, .top-button a {
 }
 
 h1 {
-	text-align: center;
-	font-size: 2.4em;
-	margin-bottom: 0.4em;
+	/* text-align: center; */
+	padding-left: 1rem;
+	font-size: 2.4rem;
 }
 
-h2, .top-button {
-	font-size: 2em;
+h2 {
+	font-size: 2rem;
 }
 
-p, p a, li, .project a {
+h2 a i.material-icons {
+	font-size: 1.6rem;
+}
+
+p, p a, li {
 	font-family: 'Raleway', sans-serif;
-	font-size: 1.2em;
-	line-height: 1.6em;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
 }
 
 a {
-	font-weight: 600;
 	text-decoration: none;
 }
 
-.project a {
-	color: #f2f0ec;
-}
-
 .wrap {
-	margin: auto;
+	z-index: 5;
 	min-width: 400px;
 	max-width: 900px;
 	min-height: 100vh;
-	padding: 0;
-	background: #d3d0c8;
+	padding: 1rem;
+	background: #efefef;
 	overflow: hidden;
-	box-shadow: 0 0 20px 15px rgba(0,0,0,0.25);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
-.header {
-	padding: 1em;
-	margin-bottom: 2em;
+.img-face {
+	flex: 0 0 auto;
+	background: url('./assets/00-doodle-face.png') no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	height: calc(540px / 8);
+	width: calc(540px / 8);
 }
 
 .header ul {
-	text-align: center;
+	flex: 1 1 auto;
+	text-align: right;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -65,65 +93,36 @@ a {
 .header ul li {
 	display: inline-block;
 	margin: auto;
-	padding: 0 0.5em 0 0.5em;
-	font-size: 1.6em;
+	padding: 0 0.5rem 0 0.5rem;
+	font-size: 1.6rem;
 }
 
 .section {
-	background: #f2f0ec;
-	border-left: #6699cc 0.5em solid;
-	border-radius: 6px;
-	margin: 1.4em;
-	margin-bottom: 2em;
-	padding: 1.6em;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+	margin: 3rem 1rem;
+	border-left: 1px solid #6699CC;
+	padding-left: 1rem;
 }
 
-.project-list {
-	display: flex;
-	flex: 1 1;
-	flex-flow: row wrap;
-	justify-content: center;
+ul.project-list {
+	list-style-type: none;
+	padding: 0 1rem;
 }
 
-.project {
-	text-align: center;
-	padding: 1em;
-	border-radius: 6px;
-	margin-right: 0.5em;
-	margin-bottom: 0.5em;
-	background: #6699cc;
-	width: auto;
+ul.project-list li {
+	margin-bottom: 0.5rem;
+}
+
+ul.project-list li a, ul.project-list li i.material-icons {
+	font-size: 1.4rem;
 }
 
 .footer {
-	padding: 0 1em;
+	padding: 0 1rem;
 	margin: 0;
 	text-align: center;
 }
 
-.top-button {
-	background: #6699cc;
-	height: 1.5em;
-	width: 1.5em;
-	text-align: center;
-	border-radius: 50%;
-	position: fixed;
-	bottom: 1em;
-	right: 1em;
-}
-
-/* Face creation is difficult */
-@media (min-width: 0px) and (max-width: 900px) {
-	.face-box {
-		margin-bottom: 1em;
-	}
-}
-@media (min-width: 900px) {
-	.face-box {
-		margin-bottom: -6em !important;
-	}
-}
+/* Face box is produced below. */
 
 .face-box {
 	position: relative;
