@@ -1,7 +1,4 @@
-Current Version:
+Current Version: 0.0.1
 
-## v0.1.0
-- Added react
-
-## v0.0.1 (Alpha Release)
-- Recording current state of things
+## 0.0.1 (Alpha Release)
+- Recording current state of things in `/old`
