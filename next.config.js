@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  bashpath: '/'
+  basePath: ''
 }
 
 module.exports = nextConfig
