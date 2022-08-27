@@ -1,0 +1,17 @@
+@import "styles/theming";
+
+.headerContainer,
+.main,
+.footerContainer {
+  margin: 0 auto;
+  max-width: 42rem;
+}
+
+.main {
+  display: flex;
+  min-height: calc(90vh - 64px);
+  padding: 0 1rem;
+  border: $borderWidth solid $content;
+  background: $off-white;
+  margin: 1rem auto;
+}

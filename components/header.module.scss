@@ -1,0 +1,19 @@
+@import "styles/theming";
+
+.header {
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  // Box
+  background: $content;
+  border-bottom: $borderWidth solid $accent;
+  color: $accent;
+  width: 100%;
+  padding: 1rem;
+}
