@@ -16,8 +16,8 @@
     "sass": "latest"
   },
   "devDependencies": {
-    "eslint": "latest",
+    "eslint": "^8.7.0",
     "eslint-config-next": "latest",
-    "prettier": "latest"
+    "prettier": "^2.5.1"
   }
 }
