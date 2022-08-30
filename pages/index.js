@@ -1,25 +1,18 @@
 import React from 'react'
-import Link from 'next/link'
+import Card from '../components/card';
+import MiniCard from '../components/mini_card';
 
 export default function Index() {
   return (
-    <section>
-      <h2>Index</h2>
-
-      <Link href="about">testtest</Link>
-
-      {/* <Card>
-
-      </Card> */}
-
+    <Card pageTitle='Home'>
       <p>This is the home page, make it basic but point to different things.</p>
 
-      <p>Explain what I can do!</p>
+      <MiniCard>
+        <p>About Mini-card?</p>
+      </MiniCard>
 
-      <p>Projects.</p>
-
-      {/* {ProjectCardsComponent} */}
-    </section>
+      <p>Projects Mini-card?</p>
+    </Card>
   );
 }
 

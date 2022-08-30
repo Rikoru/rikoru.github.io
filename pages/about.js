@@ -1,12 +1,12 @@
 import React from 'react';
+import Card from '../components/card';
+
 export default function Index() {
   const title = 'About';
 
   return (
-    <>
-      <div className="pageTitle">
-        <h2>{title}</h2>
-      </div>
-    </>
+    <Card pageTitle={title}>
+      <p>Test content please ignore.</p>
+    </Card>
   );
 }

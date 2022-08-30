@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import { g } from "../../../constants/global";
-import styles from "./header.module.scss";
+import React from 'react';
+import Link from 'next/link';
+import { g } from '../../../constants/global';
+import styles from './header.module.scss';
 
 export default function Header() {
   return (
-    <section className={styles.header}>
-      <div className="headerTitle">
+    <div className={styles.header}>
+      <div className={styles.headerTitle}>
         <Link href="/">
           <h1>{g.titleCool}</h1>
         </Link>
@@ -18,6 +18,6 @@ export default function Header() {
           </li>
         </ul>
       </div>
-    </section>
+    </div>
   );
 }

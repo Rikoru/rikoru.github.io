@@ -1,10 +1,11 @@
-@import "styles/theming";
+@import 'styles/theming';
 
 $spacer: 16px;
+$innerPadding: 16px;
 
 .header {
   headerTitle {
-    a h1 {
+    h1 {
       font-size: 2.8rem;
       text-align: center;
     }
@@ -14,7 +15,6 @@ $spacer: 16px;
     ul {
       list-style: none;
       li {
-        list-style: none;
         a {
           font-size: 1.4rem;
           font-weight: 600;
@@ -22,14 +22,14 @@ $spacer: 16px;
       }
     }
 
-    flex: auto;
-    align-items: center;
-    flex-direction: row;
+    align-self: center;
+    padding-right: $innerPadding;
   }
 
   // Flex
   display: flex;
-  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
 
   // Box
   background: $content;

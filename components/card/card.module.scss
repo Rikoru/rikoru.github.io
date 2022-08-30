@@ -1,0 +1,37 @@
+@import 'styles/theming';
+
+.cardFrame {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  border-radius: $outerRadius;
+  border: 1px solid $theme;
+}
+
+.cardHeader {
+  background: $theme;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    margin: 4px;
+    flex: auto;
+    font-size: 1.4rem;
+    text-align: center;
+    color: $highlight;
+  }
+}
+
+.cardBody {
+  padding: $outerPadding;
+  align-items: normal;
+  align-self: stretch;
+  width: 100%;
+  background: $off-white;
+  height: calc(80vh - 64px);
+  box-shadow: inset 0px 20px 10px -10px #bfc1bb;
+}

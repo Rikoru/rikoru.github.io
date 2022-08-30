@@ -1,6 +1,4 @@
-@import "styles/theming";
-
-$outerPadding: 32px;
+@import 'styles/theming';
 
 .headerContainer,
 .main,
@@ -10,22 +8,5 @@ $outerPadding: 32px;
 }
 
 .main {
-  display: flex;
-  min-height: calc(90vh - 64px);
-  padding: 0 $outerPadding;
-  border: $borderWidth solid $content;
-  background: $off-white;
   margin: 1rem auto;
-
-  .pageTitle {
-    h2 {
-      flex: auto;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }

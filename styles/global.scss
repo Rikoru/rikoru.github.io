@@ -1,10 +1,10 @@
-@import "./theming";
+@import './theming';
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   background: $backing;
 }
@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
 
@@ -34,16 +34,4 @@ h4 {
     color: white;
     background: black;
   }
-}
-
-.pageTitle {
-  h2 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 100%;
 }
