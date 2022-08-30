@@ -1,9 +1,9 @@
-@import "styles/theming";
+@import 'styles/theming';
 
 .footer {
   background: $content;
-  color: $accent;
-  border-top: $borderWidth solid $accent;
+  color: $textDark;
+  border-top: $borderWidth solid $theme;
   display: flex;
   flex: 1;
   padding: 0.5rem 0;

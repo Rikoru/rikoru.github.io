@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  border-radius: $outerRadius;
+  // border-radius: $outerRadius;
   border: 1px solid $theme;
 }
 
@@ -32,6 +32,5 @@
   align-self: stretch;
   width: 100%;
   background: $off-white;
-  height: calc(80vh - 64px);
-  box-shadow: inset 0px 20px 10px -10px #bfc1bb;
+  height: 100%;
 }

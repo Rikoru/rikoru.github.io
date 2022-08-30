@@ -4,9 +4,9 @@ $spacer: 16px;
 $innerPadding: 16px;
 
 .header {
-  headerTitle {
+  .headerTitle {
     h1 {
-      font-size: 2.8rem;
+      font-size: 1.8rem;
       text-align: center;
     }
   }
@@ -15,7 +15,9 @@ $innerPadding: 16px;
     ul {
       list-style: none;
       li {
+        display: inline;
         a {
+          padding-left: 12px;
           font-size: 1.4rem;
           font-weight: 600;
         }
@@ -23,7 +25,10 @@ $innerPadding: 16px;
     }
 
     align-self: center;
-    padding-right: $innerPadding;
+  }
+
+  a:hover {
+    color: $accent;
   }
 
   // Flex
@@ -33,8 +38,10 @@ $innerPadding: 16px;
 
   // Box
   background: $content;
-  border-bottom: $borderWidth solid $accent;
-  color: $accent;
+  border-bottom: $borderWidth solid $theme;
+
+  // Basic properties
+  color: $textDark;
   width: 100%;
   padding: $spacer;
 }

@@ -1,6 +1,18 @@
 @import 'styles/theming';
 
 .miniCardFrame {
-  border: 1px solid $highlight;
+  border: 2px solid $content;
   padding: $innerPadding;
+  margin-bottom: $outerPadding;
+  border-radius: $outerRadius;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+h3.miniCardTitle {
+  // font-size: 1.2rem;
+  font-weight: 600;
 }

@@ -7,14 +7,17 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.headerTitle}>
-        <Link href="/">
-          <h1>{g.titleCool}</h1>
-        </Link>
+        <h1>
+          <Link href="/">{g.titleCool}</Link>
+        </h1>
       </div>
       <div className={styles.navbar}>
         <ul>
           <li>
             <Link href="about">About</Link>
+          </li>
+          <li>
+            <Link href="projects">Projects</Link>
           </li>
         </ul>
       </div>
