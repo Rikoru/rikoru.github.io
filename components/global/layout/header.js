@@ -1,4 +1,4 @@
-import { g } from "../constants/global"
+import { g } from '../../../constants/global'
 import styles from './header.module.scss'
 
 export default function Header() {

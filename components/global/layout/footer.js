@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { g } from '../constants/global'
+import { g } from '../../../constants/global'
 import styles from './footer.module.scss'
 
 export default function Footer() {
