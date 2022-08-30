@@ -1,11 +1,12 @@
+import React from 'react';
 export default function Index() {
-
-  const title = 'About'
+  const title = 'About';
 
   return (
-    <section className="pageTitle">
-      <h2>{title}</h2>
-    </section>
-  )
-
+    <>
+      <div className="pageTitle">
+        <h2>{title}</h2>
+      </div>
+    </>
+  );
 }

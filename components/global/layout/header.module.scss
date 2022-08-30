@@ -1,19 +1,40 @@
 @import "styles/theming";
 
+$spacer: 16px;
+
 .header {
-  h1 {
-    font-size: 1.8rem;
-    text-align: center;
+  headerTitle {
+    a h1 {
+      font-size: 2.8rem;
+      text-align: center;
+    }
   }
-  h2 {
-    font-size: 1.4rem;
-    text-align: center;
+
+  .navbar {
+    ul {
+      list-style: none;
+      li {
+        list-style: none;
+        a {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    flex: auto;
+    align-items: center;
+    flex-direction: row;
   }
+
+  // Flex
+  display: flex;
+  align-content: center;
 
   // Box
   background: $content;
   border-bottom: $borderWidth solid $accent;
   color: $accent;
   width: 100%;
-  padding: 1rem;
+  padding: $spacer;
 }

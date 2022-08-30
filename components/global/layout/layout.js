@@ -1,10 +1,13 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
 import styles from './layout.module.scss'
 import Header from './header'
 import Footer from './footer'
 
 export default function Layout({ children }) {
   return (
-    <main>
+    <div className="main">
       <section className={styles.headerContainer}>
         <Header></Header>
       </section>
@@ -14,6 +17,9 @@ export default function Layout({ children }) {
       <section className={styles.footerContainer}>
         <Footer></Footer>
       </section>
-    </main>
+    </div>
   )
+}
+Layout.propTypes = {
+  children: PropTypes.element,
 }
