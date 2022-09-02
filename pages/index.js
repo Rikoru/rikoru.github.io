@@ -34,6 +34,11 @@ export default function Index() {
       <Card title="Portfolio" icon="book">
         <p>Can I also do a portfolio.</p>
       </Card>
+
+      <Card title="Bloop" icon="book">
+        <p>is big</p>
+        <p>Problematic even.</p>
+      </Card>
     </>
   );
 }
