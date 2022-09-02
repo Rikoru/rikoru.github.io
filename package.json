@@ -1,6 +1,6 @@
 {
   "name": "home",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,14 +13,14 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.3",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "sass": "latest"
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.54.8"
   },
   "devDependencies": {
     "eslint": "^8.7.0",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "12.2.5",
     "eslint-plugin-react": "^7.31.1",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.1"
