@@ -1,15 +1,17 @@
-import React from 'react'
-import '../styles/global.scss'
-import Layout from '../components/global/layout/layout'
+import React from 'react';
+import '../styles/global.scss';
+import Layout from '../components/global/layout/layout';
 
 // Portals pass props
 // eslint-disable-next-line react/prop-types
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+    <React.Fragment>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </React.Fragment>
+  );
 }
 
-export default MyApp
+export default App;

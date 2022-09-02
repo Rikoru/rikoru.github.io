@@ -3,10 +3,19 @@
 $spacer: 16px;
 $innerPadding: 16px;
 
+.headerWrapper {
+  background: $content;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
+  max-width: $maxWidth;
+  align-self: center;
+
   .headerTitle {
     h1 {
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       text-align: center;
     }
   }
@@ -35,10 +44,6 @@ $innerPadding: 16px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-
-  // Box
-  background: $content;
-  border-bottom: $borderWidth solid $theme;
 
   // Basic properties
   color: $textDark;

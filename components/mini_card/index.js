@@ -13,12 +13,15 @@ const prepTitleSection = (title) =>
 
 export default function MiniCard({ title, pageLink, children }) {
   return (
-    <Link href={pageLink}>
+    <>
       <div className={styles.miniCardFrame}>
         {prepTitleSection(title)}
         <div className={styles.miniCardBody}>{children}</div>
+        <div className={styles.miniCardFooter}>
+          <Link href={pageLink}>Check out the SOURCE</Link>
+        </div>
       </div>
-    </Link>
+    </>
   );
 }
 MiniCard.propTypes = {

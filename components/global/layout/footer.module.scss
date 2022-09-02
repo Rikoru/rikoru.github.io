@@ -1,19 +1,26 @@
 @import 'styles/theming';
 
 .footer {
-  background: $content;
-  color: $textDark;
-  border-top: $borderWidth solid $theme;
+  // Outer
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 32px;
+
+  // Inner
   display: flex;
-  flex: 1;
-  padding: 0.5rem 0;
   justify-content: center;
   align-items: center;
+
+  // Theming
+  background: $content;
+  color: $textDark;
 }
 
 .footer p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-grow: 1;
 }

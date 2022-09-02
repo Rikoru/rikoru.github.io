@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $baseFont;
   font-weight: 400;
   background: $backing;
 }
@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $headerFont;
   font-weight: 600;
 }
 

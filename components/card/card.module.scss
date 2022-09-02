@@ -1,13 +1,23 @@
 @import 'styles/theming';
 
+.cardWrapper {
+  background: $theme;
+  display: flex;
+  flex-direction: column;
+}
+
 .cardFrame {
-  padding: 0;
+  // Outer
+  align-self: center;
+  min-width: $maxWidth;
   overflow: hidden;
+
+  // Inner
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  // border-radius: $outerRadius;
   border: 1px solid $theme;
+  padding: 0;
 }
 
 .cardHeader {
@@ -17,20 +27,29 @@
   justify-content: center;
   align-items: center;
 
+  .cardIcons {
+    color: $off-white;
+    align-self: flex-end;
+  }
+
   h2 {
-    margin: 4px;
-    flex: auto;
-    font-size: 1.4rem;
+    margin: 12px;
+    font-size: 1.8rem;
+    line-height: 4rem;
     text-align: center;
     color: $highlight;
   }
 }
 
 .cardBody {
-  padding: $outerPadding;
-  align-items: normal;
-  align-self: stretch;
+  // Outer
   width: 100%;
-  background: $off-white;
   height: 100%;
+  align-self: stretch;
+
+  // Inner
+  padding: $innerPadding;
+  align-items: normal;
+  background: $off-white;
+  border-radius: $outerRadius;
 }

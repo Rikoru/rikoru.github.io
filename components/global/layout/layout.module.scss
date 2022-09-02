@@ -4,5 +4,10 @@
 .main,
 .footerContainer {
   margin: 0 auto;
-  max-width: 46rem;
+  width: 100%;
+}
+
+.main {
+  min-height: 100vh;
+  margin-bottom: 32px;
 }
