@@ -1,15 +1,16 @@
-import React from 'react';
-import SectionCard from '../components/card';
+import React, { useMemo } from 'react';
 
-import { Typography } from '@mui/material';
-import MiniCard from '../components/mini_card';
+import SectionCard from '../components/section_card';
 import ExpandPanel from '../components/expand_panel';
+import MiniCard from '../components/mini_card';
+
+import Typography from '@mui/material/Typography';
 
 const about = (
   <div>
     <Typography>(Photo goes here)</Typography>
-    <Typography sx={{ fontWeight: 600 }}>Mircea Taras</Typography>
-    <Typography sx={{ fontStyle: 'italic' }}>
+    <Typography variant="h3">Mircea Taras</Typography>
+    <Typography variant="subtitle2">
       Software Developer &amp; Consultant
     </Typography>
   </div>
@@ -22,14 +23,19 @@ const projects = [
     body: (
       <>
         <MiniCard pageLink="https://github.com/Rikoru/rikoru.github.io">
-          <Typography>
-            Need to figure out why this is escaping the bounds... respect the
-            sizing please....
-          </Typography>
-          <Typography>
-            Originally built with HTML and a makefile, I have attempted to
-            demonstrate some of the things I can do.
-          </Typography>
+          <>
+            <Typography paragraph>
+              I built this site with NextJS + React + Material UI. If you look
+              through the source you can see the old version of the site, which
+              was built with HTML and a makefile.
+            </Typography>
+            <Typography paragraph>
+              A lot has changed since I first made it, given that I was still in
+              University when I started working on the original version. I think
+              it will continue to evolve with time, but this is where it has
+              currently landed.
+            </Typography>
+          </>
         </MiniCard>
       </>
     ),
@@ -41,9 +47,9 @@ const projects = [
 ];
 
 export default function Index() {
-  const projectsList = () => {
+  const projectsList = useMemo(() => {
     return <ExpandPanel items={projects}></ExpandPanel>;
-  };
+  }, projects);
 
   return (
     <>
@@ -51,14 +57,19 @@ export default function Index() {
         {about}
       </SectionCard>
 
-      <Card title="Projects" icon="list">
-        <Typography>Here are a few of my recent projects.</Typography>
-        {projectsList()}
-      </Card>
+      <SectionCard title="Projects" icon="list">
+        <>
+          <Typography paragraph>
+            Here are a few of my recent projects, in no particular order. This
+            area will continue to change as new ideas percolate.
+          </Typography>
+          {projectsList}
+        </>
+      </SectionCard>
 
-      <Card title="Portfolio" icon="book">
+      <SectionCard title="Portfolio" icon="book">
         <p>Can I also do a portfolio.</p>
-      </Card>
+      </SectionCard>
     </>
   );
 }

@@ -2,16 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './expand_panel.module.scss';
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from '@mui/material';
-import { ExpandMoreRounded } from '@mui/icons-material';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+
+import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
+
+const makeSummary = (item, index) => {
+  const indexName = 'panel-' + index;
+  return (
+    <AccordionSummary
+      expandIcon={<ExpandMoreRounded />}
+      aria-controls={indexName + '-content'}
+      id={indexName + '-header'}
+    >
+      <Typography variant="h3" sx={{ width: '33%', flexShrink: 0 }}>
+        {item.title}
+      </Typography>
+      {item.subTitle && (
+        <Typography sx={{ color: 'text.secondary' }}>
+          {item.subTitle}
+        </Typography>
+      )}
+    </AccordionSummary>
+  );
+};
 
 const makePanel = (item, index, expanded, handleChange) => {
-  const indexName = 'panel-' + index;
   return (
     <Accordion
       disableGutters
@@ -19,20 +38,7 @@ const makePanel = (item, index, expanded, handleChange) => {
       onChange={handleChange(index)}
       key={index}
     >
-      <AccordionSummary
-        expandIcon={<ExpandMoreRounded />}
-        aria-controls={indexName + '-content'}
-        id={indexName + '-header'}
-      >
-        <Typography sx={{ width: '33%', flexShrink: 0 }}>
-          {item.title}
-        </Typography>
-        {item.subTitle && (
-          <Typography sx={{ color: 'text.secondary' }}>
-            {item.subTitle}
-          </Typography>
-        )}
-      </AccordionSummary>
+      {makeSummary(item, index)}
       <AccordionDetails>{item.body}</AccordionDetails>
     </Accordion>
   );

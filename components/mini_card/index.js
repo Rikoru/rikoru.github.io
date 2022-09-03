@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './mini_card.module.scss';
 
-import { Button } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import { CodeRounded } from '@mui/icons-material';
 
 const prepTitleSection = (title) =>
@@ -19,6 +19,7 @@ export default function MiniCard({ title, pageLink, children }) {
       <div className={styles.miniCardFrame}>
         {prepTitleSection(title)}
         <div className={styles.miniCardBody}>{children}</div>
+        <Divider />
         <div className={styles.miniCardFooter}>
           <Button
             variant="outlined"
