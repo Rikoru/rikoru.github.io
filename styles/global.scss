@@ -2,11 +2,11 @@
 
 html,
 body {
+  background: $backing;
   padding: 0;
   margin: 0;
   font-family: $baseFont;
   font-weight: 400;
-  background: $backing;
 }
 
 a {
@@ -15,9 +15,7 @@ a {
 }
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
   font-family: $headerFont;
   font-weight: 600;
 }

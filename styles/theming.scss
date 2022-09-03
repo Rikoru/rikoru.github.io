@@ -3,7 +3,7 @@ $accent: #f0bc42;
 $highlight: #f6f6f6;
 $content: #6699cc;
 $off-white: #fafafa;
-$theme: #48646e;
+$theme: #3f5077;
 $textDark: rgba(0, 0, 0, 0.87);
 
 $borderWidth: 4px;
@@ -11,6 +11,7 @@ $outerPadding: 32px;
 $outerRadius: 12px;
 $innerPadding: 16px;
 $maxWidth: 46rem;
+$innerMaxWidth: calc($maxWidth - $outerPadding);
 
-$baseFont: 'Raleway', sans-serif;
-$headerFont: 'Josefin Sans', sans-serif;
+$headerFont: 'Raleway', sans-serif;
+$baseFont: 'Roboto', sans-serif;

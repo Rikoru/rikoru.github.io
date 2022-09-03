@@ -1,9 +1,9 @@
 @import 'styles/theming';
 
 .cardWrapper {
-  background: $theme;
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
 }
 
 .cardFrame {
@@ -16,28 +16,26 @@
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  border: 1px solid $theme;
   padding: 0;
 }
 
 .cardHeader {
-  background: $theme;
+  background: $content;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: $outerRadius $outerRadius 0 0;
 
-  .cardIcons {
+  .cardIcon {
     color: $off-white;
-    align-self: flex-end;
   }
 
   h2 {
-    margin: 12px;
-    font-size: 1.8rem;
-    line-height: 4rem;
+    margin: 1rem 0.5rem;
+    font-size: 1.4rem;
     text-align: center;
-    color: $highlight;
+    color: $off-white;
   }
 }
 
@@ -51,5 +49,8 @@
   padding: $innerPadding;
   align-items: normal;
   background: $off-white;
-  border-radius: $outerRadius;
+  border-radius: 0 0 $outerRadius $outerRadius;
+  .cardBodyContent {
+    max-width: $innerMaxWidth;
+  }
 }

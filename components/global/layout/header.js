@@ -15,10 +15,10 @@ export default function Header() {
         <div className={styles.navbar}>
           <ul>
             <li>
-              <Link href="about">About</Link>
+              <Link href="portfolio">Portfolio</Link>
             </li>
             <li>
-              <Link href="projects">Projects</Link>
+              <Link href="contact">Contact</Link>
             </li>
           </ul>
         </div>

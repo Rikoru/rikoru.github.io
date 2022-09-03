@@ -11,7 +11,9 @@ export default function Card({ title, icon, children }) {
           <Icon className={styles.cardIcon}>{icon}</Icon>
           <h2>{title}</h2>
         </div>
-        <div className={styles.cardBody}>{children}</div>
+        <div className={styles.cardBody}>
+          <div className={styles.cardBodyContent}>{children}</div>
+        </div>
       </div>
     </div>
   );

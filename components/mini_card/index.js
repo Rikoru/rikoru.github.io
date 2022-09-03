@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './mini_card.module.scss';
-import Link from 'next/link';
+
+import { Button } from '@mui/material';
+import { CodeRounded } from '@mui/icons-material';
 
 const prepTitleSection = (title) =>
   !!title && (
@@ -18,7 +20,13 @@ export default function MiniCard({ title, pageLink, children }) {
         {prepTitleSection(title)}
         <div className={styles.miniCardBody}>{children}</div>
         <div className={styles.miniCardFooter}>
-          <Link href={pageLink}>Check out the SOURCE</Link>
+          <Button
+            variant="outlined"
+            href={pageLink}
+            startIcon={<CodeRounded />}
+          >
+            Source
+          </Button>
         </div>
       </div>
     </>
