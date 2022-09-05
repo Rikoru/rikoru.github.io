@@ -5,14 +5,14 @@ import ExpandPanel from '../components/expand_panel';
 import MiniCard from '../components/mini_card';
 
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 
 const about = (
   <div>
     <Typography>(Photo goes here)</Typography>
-    <Typography variant="h3">Mircea Taras</Typography>
-    <Typography variant="subtitle2">
-      Software Developer &amp; Consultant
-    </Typography>
+    <Typography>Mircea Taras</Typography>
+    <Typography variant="body2">Software Developer &amp; Consultant</Typography>
+    <Divider />
   </div>
 );
 

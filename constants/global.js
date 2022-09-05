@@ -3,4 +3,8 @@ export const g = {
   titleCool: 'Mircea▲Digital',
   license: 'MIT License',
   licenseUri: 'https://opensource.org/licenses/MIT',
-}
+  getEmail: () => {
+    const frag = ['mircea', 'taras', 'i', '+digital'];
+    return frag[0] + frag[2] + frag[1] + frag[3] + '@gmail.com';
+  },
+};
