@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
+import getProjects from '../constants/projects';
 
 const about = (
   <div>
@@ -58,49 +59,26 @@ const about = (
   </div>
 );
 
-const projects = [
-  {
-    title: 'Personal Site',
-    subTitle: 'React JS',
-    body: (
-      <>
-        <MiniCard pageLink="https://github.com/Rikoru/rikoru.github.io">
-          <>
-            <Typography paragraph>
-              I built this site with NextJS + React + Material UI. If you look
-              through the source you can see the old version of the site, which
-              was built with HTML and a makefile.
-            </Typography>
-            <Typography paragraph>
-              A lot has changed since I first made it, given that I was still in
-              University when I started working on the original version. I think
-              it will continue to evolve with time, but this is where it has
-              currently landed.
-            </Typography>
-          </>
-        </MiniCard>
-      </>
-    ),
-  },
-  {
-    title: 'TBD',
-    subTitle: '...',
-    body: (
-      <>
-        <MiniCard>
-          <>
-            <Typography>TBD</Typography>
-          </>
-        </MiniCard>
-      </>
-    ),
-  },
-];
+// const prepProjectsList = (projects) => {
+//   return projects.map((project) => {
+//     return (
+//       <MiniCard
+//         title={project.title}
+//         subTitle={project.subTitle}
+//         pageLink={project.pageLink}
+//       >
+//         {project.body}
+//       </MiniCard>
+//     );
+//   });
+// };
 
 export default function Index() {
-  const projectsList = useMemo(() => {
-    return <ExpandPanel items={projects}></ExpandPanel>;
-  }, projects);
+  const projects = useMemo(() => getProjects().slice(0, 2));
+  const projectsList = useMemo(
+    () => <ExpandPanel items={projects} />,
+    projects
+  );
 
   return (
     <>

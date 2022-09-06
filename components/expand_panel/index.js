@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 
 import MuiAccordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
@@ -15,27 +15,38 @@ const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} {...props} />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
-    borderBottom: 0,
+  '&:not(:first-of-type)': {
+    borderTop: 0,
   },
   '&:before': {
     display: 'none',
   },
 }));
 
+const AccordionSummary = styled((props) => (
+  <MuiAccordionSummary
+    expandIcon={<ExpandMoreRounded />}
+    sx={{ fontSize: '0.9rem' }}
+    {...props}
+  />
+))(({ theme }) => ({
+  background: 'rgba(0, 0, 0, 0.08)',
+  justifyItems: 'center',
+}));
+
 const makeSummary = (item, index) => {
   const indexName = 'panel-' + index;
   return (
     <AccordionSummary
-      expandIcon={<ExpandMoreRounded />}
       aria-controls={indexName + '-content'}
       id={indexName + '-header'}
+      sx={{ display: 'flex', justifyItems: 'space-between' }}
     >
-      <Typography variant="h3" sx={{ width: '33%', flexShrink: 0 }}>
-        {item.title}
-      </Typography>
+      <Typography sx={{ width: '50%', flexShrink: 0 }}>{item.title}</Typography>
       {item.subTitle && (
-        <Typography sx={{ color: 'text.secondary' }}>
+        <Typography
+          sx={{ width: '45%', textAlign: 'right', color: 'text.secondary' }}
+        >
           {item.subTitle}
         </Typography>
       )}
