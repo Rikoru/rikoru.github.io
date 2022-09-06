@@ -2,13 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './expand_panel.module.scss';
+import { styled } from '@mui/material/styles';
 
-import Accordion from '@mui/material/Accordion';
+import MuiAccordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
+
+const Accordion = styled((props) => (
+  <MuiAccordion disableGutters elevation={0} {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&:before': {
+    display: 'none',
+  },
+}));
 
 const makeSummary = (item, index) => {
   const indexName = 'panel-' + index;
@@ -33,7 +46,6 @@ const makeSummary = (item, index) => {
 const makePanel = (item, index, expanded, handleChange) => {
   return (
     <Accordion
-      disableGutters
       expanded={expanded === index}
       onChange={handleChange(index)}
       key={index}

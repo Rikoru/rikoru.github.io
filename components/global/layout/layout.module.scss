@@ -11,4 +11,8 @@
   min-height: 100vh;
   margin-bottom: 32px;
   padding: 10px 0;
+  a {
+    color: $content;
+    font-weight: 600;
+  }
 }

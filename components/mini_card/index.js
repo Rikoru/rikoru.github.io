@@ -3,14 +3,27 @@ import PropTypes from 'prop-types';
 
 import styles from './mini_card.module.scss';
 
-import { Button, Divider } from '@mui/material';
-import { CodeRounded } from '@mui/icons-material';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+import CodeRounded from '@mui/icons-material/CodeRounded';
 
 const prepTitleSection = (title) =>
-  !!title && (
+  title && (
     <div className={styles.miniCardTitle}>
       <h3>{title}</h3>
     </div>
+  );
+
+const prepFooterSection = (pageLink) =>
+  pageLink && (
+    <>
+      <Divider />
+      <div className={styles.miniCardFooter}>
+        <Button variant="outlined" href={pageLink} startIcon={<CodeRounded />}>
+          Source
+        </Button>
+      </div>
+    </>
   );
 
 export default function MiniCard({ title, pageLink, children }) {
@@ -19,16 +32,7 @@ export default function MiniCard({ title, pageLink, children }) {
       <div className={styles.miniCardFrame}>
         {prepTitleSection(title)}
         <div className={styles.miniCardBody}>{children}</div>
-        <Divider />
-        <div className={styles.miniCardFooter}>
-          <Button
-            variant="outlined"
-            href={pageLink}
-            startIcon={<CodeRounded />}
-          >
-            Source
-          </Button>
-        </div>
+        {prepFooterSection(pageLink)}
       </div>
     </>
   );
