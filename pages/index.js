@@ -1,17 +1,19 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import leaves from '../public/leaves.png';
 
+import getProjects from '../constants/projects';
 import SectionCard from '../components/section_card';
 import ExpandPanel from '../components/expand_panel';
-import MiniCard from '../components/mini_card';
 
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
-import getProjects from '../constants/projects';
 
 const about = (
   <div>
@@ -82,6 +84,8 @@ export default function Index() {
 
   return (
     <>
+      <Image src={leaves} layout="responsive" quality={100} />
+
       <SectionCard title="About" icon="person">
         {about}
       </SectionCard>

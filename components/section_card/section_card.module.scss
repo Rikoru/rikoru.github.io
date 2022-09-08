@@ -3,13 +3,14 @@
 .cardWrapper {
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  // margin: 10px 0;
 }
 
 .cardFrame {
   // Outer
   align-self: center;
-  min-width: $maxWidth;
+  // min-width: $maxWidth;
+  width: 100%;
   overflow: hidden;
 
   // Inner
@@ -17,7 +18,7 @@
   flex-direction: column;
   justify-content: stretch;
   padding: 0;
-  margin: 10px 0;
+  // margin: 10px 0;
 }
 
 .cardHeader {
@@ -26,14 +27,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: $outerRadius $outerRadius 0 0;
 
   .cardIcon {
     color: $off-white;
   }
 
   h2 {
-    margin: 1rem 0.5rem;
+    margin: 2rem 0.5rem;
     font-size: 1.4rem;
     text-align: center;
     color: $off-white;
@@ -48,10 +48,10 @@
 
   // Inner
   padding: $innerPadding;
-  align-items: normal;
+  align-items: center;
   background: $off-white;
-  border-radius: 0 0 $outerRadius $outerRadius;
   .cardBodyContent {
     max-width: $innerMaxWidth;
+    margin: 1rem auto;
   }
 }
