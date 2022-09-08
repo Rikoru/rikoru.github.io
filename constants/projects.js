@@ -1,4 +1,4 @@
-import MiniCard from '../components/mini_card';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 
 const projects = [
@@ -42,8 +42,6 @@ const projects = [
   },
 ];
 
-export default function getProjects(
-  fields = { title: true, subTitle: true, body: true, pageLink: true }
-) {
-  return projects.map(({ ...fields }) => ({ ...fields }));
+export default function getProjects() {
+  return projects;
 }

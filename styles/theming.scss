@@ -11,7 +11,8 @@ $borderWidth: 4px;
 $outerPadding: 32px;
 $outerRadius: 12px;
 $innerPadding: 16px;
-$maxWidth: 46rem;
+
+$maxWidth: 1200px;
 $innerMaxWidth: calc($maxWidth - $outerPadding);
 
 $headerFont: 'Raleway', sans-serif;

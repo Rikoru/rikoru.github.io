@@ -31,10 +31,8 @@ const about = (
       a decent list of skills I can share with anyone that needs them.
     </Typography>
     <Typography paragraph>
-      I&apos;m aiming to become more of a generalist, but my skills fall more
-      into software development than in dev-ops. I&apos;m available to chat,
-      whether you need help with your internal tools or your customer-facing
-      features.{' '}
+      Whether you need help with your internal tools or your customer-facing
+      features, I&apos;m available to chat today!
     </Typography>
     <Link href="/contact" passHref>
       <Button variant="outlined">Reach out today!</Button>
@@ -60,20 +58,6 @@ const about = (
     </Stack>
   </div>
 );
-
-// const prepProjectsList = (projects) => {
-//   return projects.map((project) => {
-//     return (
-//       <MiniCard
-//         title={project.title}
-//         subTitle={project.subTitle}
-//         pageLink={project.pageLink}
-//       >
-//         {project.body}
-//       </MiniCard>
-//     );
-//   });
-// };
 
 export default function Index() {
   const projects = useMemo(() => getProjects().slice(0, 2));
