@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { g } from '../../../constants/global';
+import { g } from '../../constants/global';
 import styles from './footer.module.scss';
 
 import Typography from '@mui/material/Typography';

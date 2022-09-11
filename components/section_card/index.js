@@ -5,18 +5,27 @@ import styles from './section_card.module.scss';
 
 import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
+import { Card, CardContent } from '@mui/material';
+import Image from 'next/image';
 
-export default function SectionCard({ title, icon, children }) {
+export default function SectionCard({ title, icon, background, children }) {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardFrame}>
+        <Image
+          src={background}
+          className={styles.cardBackground}
+          layout="fill"
+        />
         <div className={styles.cardHeader}>
           <Icon className={styles.cardIcon}>{icon}</Icon>
           <Typography variant="h2">{title}</Typography>
         </div>
-        <div className={styles.cardBody}>
-          <div className={styles.cardBodyContent}>{children}</div>
-        </div>
+        <Card className={styles.cardBody}>
+          <CardContent className={styles.cardBodyContent}>
+            {children}
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
@@ -24,5 +33,6 @@ export default function SectionCard({ title, icon, children }) {
 SectionCard.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  background: PropTypes.any,
   children: PropTypes.element,
 };

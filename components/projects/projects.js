@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 
 const projects = [
@@ -42,6 +43,27 @@ const projects = [
   },
 ];
 
-export default function getProjects() {
+export function getProjects() {
   return projects;
 }
+
+/**
+ * { title: '', subTitle: '', body: (), pageLink: ''}
+ */
+export const projectProp = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
+  body: PropTypes.node,
+  pageLink: PropTypes.node,
+};
+
+/**
+ * { items: [ {}]}
+ */
+export const projectArrayProp = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      ...projectProp,
+    })
+  ),
+};

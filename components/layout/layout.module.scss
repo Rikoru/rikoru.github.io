@@ -8,9 +8,7 @@
 }
 
 .main {
-  min-height: 100vh;
-  margin-bottom: 32px;
-  padding-bottom: 2rem;
+  position: relative;
   a {
     color: $content;
     font-weight: 600;

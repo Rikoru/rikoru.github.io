@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/global.scss';
-import Layout from '../components/global/layout/layout';
+import Layout from '../components/layout';
 
 // Portals pass props
 // eslint-disable-next-line react/prop-types

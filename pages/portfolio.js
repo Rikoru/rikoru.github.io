@@ -2,11 +2,13 @@ import React, { useMemo } from 'react';
 import MiniCard from '../components/mini_card';
 import SectionCard from '../components/section_card';
 
-import getProjects from '../constants/projects';
+import { getProjects } from '../components/projects/projects';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import Link from 'next/link';
 import { IconButton, Stack } from '@mui/material';
 import CodeRounded from '@mui/icons-material/CodeRounded';
+
+import clouds from '../public/clouds.jpg';
 
 const prepProjects = (projects) => {
   return projects.map((item) => {
@@ -34,7 +36,7 @@ export default function Portfolio() {
   const projectsSection = useMemo(() => prepProjects(projects), [projects]);
 
   return (
-    <SectionCard title="Portfolio" icon="list">
+    <SectionCard title="Portfolio" icon="list" background={clouds}>
       <Grid2 container spacing={2}>
         {projectsSection}
       </Grid2>

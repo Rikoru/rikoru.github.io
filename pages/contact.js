@@ -13,6 +13,8 @@ import Stack from '@mui/material/Stack';
 
 import SendRounded from '@mui/icons-material/SendRounded';
 
+import clouds from '../public/clouds.jpg';
+
 const SendMail = ({ fields }) => {
   const { subject, body } = fields;
   let params = subject || body ? '?' : '';
@@ -56,7 +58,11 @@ export default function Contact() {
 
   return (
     <>
-      <SectionCard title="Contact" icon="contact_mail_rounded">
+      <SectionCard
+        title="Contact"
+        icon="contact_mail_rounded"
+        background={clouds}
+      >
         <>
           {contactBlurb}
           <Box component="form" autoComplete="off">
@@ -91,5 +97,3 @@ SendMail.propTypes = {
     body: PropTypes.string.isRequired,
   }),
 };
-
-Contact.getLayout;

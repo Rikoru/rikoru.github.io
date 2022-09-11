@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import { projectArrayProp } from '../projects/projects';
 
 import styles from './expand_panel.module.scss';
 import { styled } from '@mui/material/styles';
@@ -12,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
 
 const Accordion = styled((props) => (
-  <MuiAccordion disableGutters elevation={0} {...props} />
+  <MuiAccordion disableGutters elevation={1} {...props} />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
   '&:not(:first-of-type)': {
@@ -79,13 +80,5 @@ export default function ExpandPanel({ items }) {
 
   return <div className={styles.expandPanelWrapper}>{panels()}</div>;
 }
-ExpandPanel.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      subTitle: PropTypes.string,
-      body: PropTypes.node,
-      footerContent: PropTypes.node,
-    })
-  ),
-};
+
+ExpandPanel.propTypes = projectArrayProp;

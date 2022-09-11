@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './layout.module.scss';
-import Header from './header';
-import Footer from './footer';
+import Header from '../header';
+import Footer from '../footer';
 
 export default function Layout({ children }) {
   return (
