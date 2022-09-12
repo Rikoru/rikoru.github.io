@@ -47,13 +47,21 @@ export default function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h1"
-            noWrap
-            sx={{ display: { xs: 'none', md: 'flex' }, fontSize: '2rem' }}
-          >
-            <Link href="/">{g.titleCool}</Link>
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Typography
+              variant="h1"
+              noWrap
+              sx={{
+                flexGrow: 1,
+                fontSize: '2rem',
+              }}
+            >
+              <Link href="/">{g.titleCool}</Link>
+            </Typography>
+            <div className={styles.navbar}>
+              <ul>{headerLinks}</ul>
+            </div>
+          </Box>
 
           <Box
             sx={{
