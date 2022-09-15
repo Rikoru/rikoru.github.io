@@ -1,87 +1,105 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { g } from '../../constants/global';
 import styles from './header.module.scss';
 
 import Icon from '@mui/material/Icon';
 
 import Sections from '../../constants/sections';
-import { IconButton, Toolbar, Typography } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+} from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
-import MenuRounded from '@mui/icons-material/MenuRounded';
-
-const prepHeaderLinks = (pageLabels) => {
-  return pageLabels.map((item) => {
-    const { name, route, icon } = item;
-    return (
-      <li key={name}>
-        <Link href={route} passHref>
-          <Button startIcon={<Icon>{icon}</Icon>}>{name}</Button>
-        </Link>
-      </li>
-    );
-  });
+const headerLinks = (sections, selectedIndex, handleMenuItemClick) => {
+  return sections.map((option, index) => (
+    <MenuItem
+      key={option.route}
+      disabled={index === selectedIndex}
+      onClick={(event) => handleMenuItemClick(event, index)}
+    >
+      <ListItemIcon>
+        <Icon>{option.icon}</Icon>
+      </ListItemIcon>
+      {option.name}
+    </MenuItem>
+  ));
 };
 
 export default function Header() {
-  const pageLabels = useMemo(() => Sections());
-  const headerLinks = useMemo(() => prepHeaderLinks(pageLabels), pageLabels);
+  const router = useRouter();
+  const sections = useMemo(() => Sections());
+
+  const getIndexByPath = () => {
+    const pathname = router.pathname;
+    return sections.findIndex((item) => '/' + item.route === pathname);
+  };
+
+  const selectedIndex = getIndexByPath();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const open = Boolean(anchorEl);
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    router.push(sections[index].route);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
-    // <div className={styles.headerWrapper}>
-    //   <div className={styles.header}>
-    //     <div className={styles.headerTitle}>
-    //       <Typography variant="h1">
-    //         <Link href="/">{g.titleCool}</Link>
-    //       </Typography>
-    //     </div>
-    //     <div className={styles.navbar}>
-    //       <ul>{headerLinks}</ul>
-    //     </div>
-    //   </div>
-    // </div>
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" className={styles.header}>
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Typography
-              variant="h1"
-              noWrap
-              sx={{
-                flexGrow: 1,
-                fontSize: '2rem',
-              }}
+          <Typography
+            variant="h1"
+            className={styles.headerTitle}
+            noWrap
+            sx={{ flexGrow: 1 }}
+          >
+            <Link href="/">{g.titleCool}</Link>
+          </Typography>
+          <List component="nav" aria-label="Sections">
+            <ListItem
+              id="menu-section-button"
+              aria-haspopup="listbox"
+              aria-controls="section-menu"
+              aria-label="Current section"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClickListItem}
             >
-              <Link href="/">{g.titleCool}</Link>
-            </Typography>
-            <div className={styles.navbar}>
-              <ul>{headerLinks}</ul>
-            </div>
-          </Box>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: 'flex', md: 'none' },
-              justifyContent: 'center',
-              alignItems: 'center',
+              <ListItemText sx={{ cursor: 'pointer' }}>
+                <Typography sx={{ fontWeight: '600' }}>
+                  {sections[selectedIndex]?.name || 'Home'}
+                </Typography>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <Menu
+            id="section-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'menu-section-button',
+              role: 'listbox',
             }}
           >
-            <Typography variant="h1" noWrap sx={{ fontSize: '1.4rem' }}>
-              <Link href="/">{g.titleCool}</Link>
-            </Typography>
-            <IconButton
-              size="large"
-              aria-controls="menu-appbar"
-              color="inherit"
-            >
-              <MenuRounded />
-            </IconButton>
-          </Box>
+            {headerLinks(sections, selectedIndex, handleMenuItemClick)}
+          </Menu>
         </Toolbar>
       </Container>
     </AppBar>

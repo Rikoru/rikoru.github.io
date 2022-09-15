@@ -1,27 +1,18 @@
 @import 'styles/theming';
 
-.headerWrapper {
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: $theme;
-  display: flex;
-  flex-direction: column;
-}
-
 .header {
   max-width: $innerMaxWidth;
   align-self: center;
   padding: $innerPadding;
 
-  .headerTitle {
-    h1 {
-      font-size: 1.8rem;
-      line-height: 4rem;
-      text-align: center;
-    }
+  & * a:hover {
+    color: $accent;
+  }
+
+  h1.headerTitle {
+    font-size: 1.8rem;
+    line-height: 4rem;
+    // text-align: center;
   }
 
   .navbar {
@@ -33,23 +24,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        .sectionIcon {
-          color: $off-white;
-        }
       }
     }
 
     align-self: center;
   }
-
-  a:hover {
-    color: $accent;
-  }
-
-  // Flex
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
 
   // Basic properties
   color: $off-white;
