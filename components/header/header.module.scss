@@ -1,9 +1,10 @@
 @import 'styles/theming';
 
 .header {
-  max-width: $innerMaxWidth;
-  align-self: center;
+  // Outer
+  position: fixed;
   padding: $innerPadding;
+  align-self: center;
 
   & * a:hover {
     color: $accent;
@@ -13,6 +14,10 @@
     font-size: 1.8rem;
     line-height: 4rem;
     // text-align: center;
+  }
+
+  .menuButton {
+    color: $off-white;
   }
 
   .navbar {

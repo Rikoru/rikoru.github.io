@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { getProjects } from '../components/projects/projects';
 import SectionCard from '../components/section_card';
 import ExpandPanel from '../components/expand_panel';
-
-import leaves from '../public/leaves.png';
+import About from './about';
+import Contact from './contact';
 
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export default function Index() {
   const projects = useMemo(() => getProjects().slice(0, 2));
@@ -18,7 +19,11 @@ export default function Index() {
 
   return (
     <>
-      <SectionCard title="Projects" icon="list" background={leaves}>
+      <SectionCard
+        title="Projects"
+        icon="list"
+        background="../public/clouds.jpg"
+      >
         <>
           <Typography paragraph>
             Here are a few of my recent projects. This area will continue to
@@ -28,6 +33,10 @@ export default function Index() {
           {projectsList}
         </>
       </SectionCard>
+      <Box sx={{ width: '100%', height: '200px', background: 'black' }} />
+      <About></About>
+      <Box sx={{ width: '100%', height: '200px', background: 'black' }} />
+      <Contact></Contact>
     </>
   );
 }

@@ -61,7 +61,7 @@ export default function Contact() {
       <SectionCard
         title="Contact"
         icon="contact_mail_rounded"
-        background={clouds}
+        background="../public/clouds"
       >
         <>
           {contactBlurb}

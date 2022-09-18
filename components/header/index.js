@@ -8,17 +8,23 @@ import Icon from '@mui/material/Icon';
 
 import Sections from '../../constants/sections';
 import {
+  Box,
   List,
   ListItem,
   ListItemText,
+  ListItemButton,
   Toolbar,
   Typography,
   Menu,
   MenuItem,
   ListItemIcon,
+  IconButton,
+  Drawer,
 } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
+
+import MenuRounded from '@mui/icons-material/MenuRounded';
 
 const headerLinks = (sections, selectedIndex, handleMenuItemClick) => {
   return sections.map((option, index) => (
@@ -36,72 +42,68 @@ const headerLinks = (sections, selectedIndex, handleMenuItemClick) => {
 };
 
 export default function Header() {
-  const router = useRouter();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const sections = useMemo(() => Sections());
 
-  const getIndexByPath = () => {
-    const pathname = router.pathname;
-    return sections.findIndex((item) => '/' + item.route === pathname);
+  const handleDrawerToggle = () => {
+    console.log('toggling mobileOpen');
+    setMobileOpen(!mobileOpen);
   };
 
-  const selectedIndex = getIndexByPath();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const drawer = (
+    <Box onClick={handleDrawerToggle}>
+      <Typography variant="h6">{g.titleCool}</Typography>
+      <List>
+        {sections.map((item) => (
+          <ListItem key={item.route} disablePadding>
+            <Link href={item.route} passHref>
+              <ListItemButton icon={item.icon}>
+                <ListItemText primary={item.name}></ListItemText>
+              </ListItemButton>
+            </Link>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
-  const open = Boolean(anchorEl);
-  const handleClickListItem = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuItemClick = (event, index) => {
-    router.push(sections[index].route);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const container = () => window.document.body;
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" className={styles.header}>
-        <Toolbar disableGutters>
-          <Typography
-            variant="h1"
-            className={styles.headerTitle}
-            noWrap
-            sx={{ flexGrow: 1 }}
-          >
-            <Link href="/">{g.titleCool}</Link>
-          </Typography>
-          <List component="nav" aria-label="Sections">
-            <ListItem
-              id="menu-section-button"
-              aria-haspopup="listbox"
-              aria-controls="section-menu"
-              aria-label="Current section"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClickListItem}
+    <>
+      <AppBar className={styles.header} component="nav" position="fixed">
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h1"
+              className={styles.headerTitle}
+              noWrap
+              sx={{ flexGrow: 1 }}
             >
-              <ListItemText sx={{ cursor: 'pointer' }}>
-                <Typography sx={{ fontWeight: '600' }}>
-                  {sections[selectedIndex]?.name || 'Home'}
-                </Typography>
-              </ListItemText>
-            </ListItem>
-          </List>
-          <Menu
-            id="section-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'menu-section-button',
-              role: 'listbox',
-            }}
-          >
-            {headerLinks(sections, selectedIndex, handleMenuItemClick)}
-          </Menu>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              <Link href="/">{g.titleCool}</Link>
+            </Typography>
+
+            <IconButton
+              onClick={handleDrawerToggle}
+              aria-label="sections"
+              className={styles.menuButton}
+            >
+              <MenuRounded />
+            </IconButton>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{ keepMounted: true }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </>
   );
 }
