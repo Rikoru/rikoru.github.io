@@ -1,17 +1,21 @@
 import React from 'react';
 
-import Divider from '@mui/material/Divider';
+import { styled } from '@mui/material/styles';
+
+import MuiDivider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
-import leaves from '../public/leaves.png';
-
-import SectionCard from '../components/section_card';
+import SectionCard from '../section_card';
 
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
+
+const Divider = styled(MuiDivider)({
+  margin: '1rem 0',
+});
 
 const about = (
   <div>
@@ -20,7 +24,7 @@ const about = (
       Full-stack Software Developer &amp; Consultant
     </Typography>
 
-    <Divider sx={{ margin: '1rem 0' }} />
+    <Divider />
 
     <Typography paragraph>
       Hi, my name is Mircea, among my various interests, I also moonlight as a
@@ -31,11 +35,13 @@ const about = (
       Whether you need help with your internal tools or your customer-facing
       features, I&apos;m available to chat today!
     </Typography>
-    <Link href="/contact" passHref>
-      <Button variant="outlined">Reach out today!</Button>
+    <Link href="#contact" passHref>
+      <Button variant="outlined">
+        Reach out today! (TODO: FIGURE OUT SCROLLING)
+      </Button>
     </Link>
 
-    <Divider sx={{ margin: '1rem 0' }} />
+    <Divider />
 
     <Typography paragraph>
       If you&apos;re looking for my creative endeavours:
@@ -59,7 +65,7 @@ const about = (
 export default function About() {
   return (
     <>
-      <SectionCard title="About" icon="person" background={leaves}>
+      <SectionCard title="About" icon="person">
         {about}
       </SectionCard>
     </>

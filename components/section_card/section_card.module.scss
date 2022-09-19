@@ -1,6 +1,7 @@
 @import 'styles/theming';
 
 $cardHeaderShadow: 0px 2px 4px rgba(0, 0, 0, 0.54);
+$borderRadius: 12px;
 
 .cardWrapper {
   display: flex;
@@ -12,58 +13,60 @@ $cardHeaderShadow: 0px 2px 4px rgba(0, 0, 0, 0.54);
   // Outer
   align-self: center;
   width: 100%;
-  overflow: hidden;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100%;
+  overflow: hidden;
+  border-radius: $borderRadius;
   z-index: 0;
+  max-width: $maxWidth;
 
   // Inner
   display: flex;
   flex-direction: column;
-  min-height: 70vh;
+  align-items: center;
 }
 
 .cardHeader {
   z-index: 1;
-  background: transparent;
+  background: rgb(63, 80, 119);
+  background: linear-gradient(
+    0deg,
+    rgba(63, 80, 119, 1) 0%,
+    rgba(102, 153, 204, 1) 100%
+  );
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 8rem;
+  width: 100%;
 
   .cardIcon {
     color: $off-white;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     margin: 0 0.5rem;
     z-index: 2;
     text-shadow: $cardHeaderShadow;
   }
 
   h2 {
+    color: $off-white;
     line-height: 6rem;
     font-weight: 400;
     font-size: 2rem;
     text-align: center;
-    color: $off-white;
     text-shadow: $cardHeaderShadow;
   }
 }
 
 .cardBody {
   // Outer
+  border-radius: 0;
   z-index: 2;
   width: 100%;
   max-width: $maxWidth;
-  margin: 0 auto 1rem auto;
-  border-radius: 12px;
+  margin: 0 auto;
 
   // Inner
-  padding: $innerPadding;
-  // align-items: center;
   background: $off-white;
   .cardBodyContent {
     z-index: 3;

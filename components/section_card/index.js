@@ -7,7 +7,7 @@ import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 import { Card, CardContent } from '@mui/material';
 
-export default function SectionCard({ title, icon, background, children }) {
+export default function SectionCard({ title, icon, children }) {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardFrame}>
@@ -27,6 +27,5 @@ export default function SectionCard({ title, icon, background, children }) {
 SectionCard.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  background: PropTypes.any,
   children: PropTypes.element,
 };

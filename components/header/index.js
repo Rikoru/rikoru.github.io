@@ -56,8 +56,11 @@ export default function Header() {
       <List>
         {sections.map((item) => (
           <ListItem key={item.route} disablePadding>
-            <Link href={item.route} passHref>
-              <ListItemButton icon={item.icon}>
+            <Link href={'#' + item.route} passHref>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Icon>{item.icon}</Icon>
+                </ListItemIcon>
                 <ListItemText primary={item.name}></ListItemText>
               </ListItemButton>
             </Link>
@@ -95,6 +98,7 @@ export default function Header() {
       </AppBar>
       <Box component="nav">
         <Drawer
+          anchor="right"
           container={container}
           variant="temporary"
           open={mobileOpen}

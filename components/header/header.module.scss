@@ -5,6 +5,7 @@
   position: fixed;
   padding: $innerPadding;
   align-self: center;
+  background: $theme;
 
   & * a:hover {
     color: $accent;

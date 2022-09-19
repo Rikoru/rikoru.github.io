@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { g } from '../constants/global';
+import { g } from '../../constants/global';
 
-import SectionCard from '../components/section_card';
+import SectionCard from '../section_card';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 import SendRounded from '@mui/icons-material/SendRounded';
-
-import clouds from '../public/clouds.jpg';
 
 const SendMail = ({ fields }) => {
   const { subject, body } = fields;
@@ -58,11 +56,7 @@ export default function Contact() {
 
   return (
     <>
-      <SectionCard
-        title="Contact"
-        icon="contact_mail_rounded"
-        background="../public/clouds"
-      >
+      <SectionCard title="Contact" icon="contact_mail_rounded">
         <>
           {contactBlurb}
           <Box component="form" autoComplete="off">
