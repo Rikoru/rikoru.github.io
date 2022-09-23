@@ -10,7 +10,7 @@ import { Card, CardContent } from '@mui/material';
 export default function SectionCard({ title, icon, children }) {
   return (
     <div className={styles.cardWrapper}>
-      <div className={styles.cardFrame}>
+      <Card className={styles.cardFrame}>
         <div className={styles.cardHeader}>
           <Icon className={styles.cardIcon}>{icon}</Icon>
           <Typography variant="h2">{title}</Typography>
@@ -20,7 +20,7 @@ export default function SectionCard({ title, icon, children }) {
             {children}
           </CardContent>
         </Card>
-      </div>
+      </Card>
     </div>
   );
 }

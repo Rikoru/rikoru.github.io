@@ -28,16 +28,16 @@ $borderRadius: 12px;
 .cardHeader {
   z-index: 1;
   background: rgb(63, 80, 119);
-  background: linear-gradient(
-    0deg,
-    rgba(63, 80, 119, 1) 0%,
-    rgba(102, 153, 204, 1) 100%
-  );
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(63, 80, 119, 1) 0%,
+  //   rgba(102, 153, 204, 1) 100%
+  // );
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 8rem;
+  // padding-top: 4rem;
   width: 100%;
 
   .cardIcon {
@@ -45,7 +45,7 @@ $borderRadius: 12px;
     font-size: 2.2rem;
     margin: 0 0.5rem;
     z-index: 2;
-    text-shadow: $cardHeaderShadow;
+    // text-shadow: $cardHeaderShadow;
   }
 
   h2 {
@@ -54,7 +54,7 @@ $borderRadius: 12px;
     font-weight: 400;
     font-size: 2rem;
     text-align: center;
-    text-shadow: $cardHeaderShadow;
+    // text-shadow: $cardHeaderShadow;
   }
 }
 
@@ -67,7 +67,7 @@ $borderRadius: 12px;
   margin: 0 auto;
 
   // Inner
-  background: $off-white;
+  background: $innerBacking;
   .cardBodyContent {
     z-index: 3;
     max-height: 100%;

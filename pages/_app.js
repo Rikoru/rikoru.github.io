@@ -1,17 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/global.scss';
 import Layout from '../components/layout';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
-// Portals pass props
-// eslint-disable-next-line react/prop-types
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 function App({ Component, pageProps }) {
   return (
-    <React.Fragment>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </React.Fragment>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <React.Fragment>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </React.Fragment>
+    </ThemeProvider>
   );
 }
 
 export default App;
+
+App.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.any,
+};
