@@ -3,7 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   basePath: '',
-  webpack5: true,
+  images: {
+    unoptimized: true,
+  },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;
