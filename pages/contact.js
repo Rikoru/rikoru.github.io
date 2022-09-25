@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { g } from '../../constants/global';
+import { g } from '../constants/global';
+import { getSectionByRoute } from '../constants/sections';
 
-import SectionCard from '../section_card';
+import SectionCard from '../components/section_card';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -44,7 +45,7 @@ const contactBlurb = (
   </>
 );
 
-export default function Contact() {
+export default function Contact({ sectionTitle, icon }) {
   const [values, setValues] = React.useState({
     subject: '',
     body: '',
@@ -56,7 +57,7 @@ export default function Contact() {
 
   return (
     <>
-      <SectionCard title="Contact" icon="contact_mail_rounded">
+      <SectionCard title={sectionTitle} icon={icon}>
         <>
           {contactBlurb}
           <Box component="form" autoComplete="off">
@@ -91,3 +92,13 @@ SendMail.propTypes = {
     body: PropTypes.string.isRequired,
   }),
 };
+
+export async function getStaticProps() {
+  const section = getSectionByRoute('contact');
+  return {
+    props: {
+      sectionTitle: section.name,
+      icon: section.icon,
+    },
+  };
+}

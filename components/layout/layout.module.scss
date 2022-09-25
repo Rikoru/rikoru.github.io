@@ -9,10 +9,10 @@
 
 .main {
   position: relative;
-  margin-top: 92px;
-  margin-bottom: 48px;
+  margin-top: calc(1rem + 92px);
+  margin-bottom: calc(1rem + 48px);
   a {
-    color: $content;
+    color: $accent;
     font-weight: 600;
   }
 }

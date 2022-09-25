@@ -26,21 +26,6 @@ import Container from '@mui/material/Container';
 
 import MenuRounded from '@mui/icons-material/MenuRounded';
 
-const headerLinks = (sections, selectedIndex, handleMenuItemClick) => {
-  return sections.map((option, index) => (
-    <MenuItem
-      key={option.route}
-      disabled={index === selectedIndex}
-      onClick={(event) => handleMenuItemClick(event, index)}
-    >
-      <ListItemIcon>
-        <Icon>{option.icon}</Icon>
-      </ListItemIcon>
-      {option.name}
-    </MenuItem>
-  ));
-};
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const sections = useMemo(() => Sections());
@@ -51,17 +36,19 @@ export default function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle}>
-      <Typography variant="h6">{g.titleCool}</Typography>
+    <Box className={styles.linkDrawer} onClick={handleDrawerToggle}>
       <List>
         {sections.map((item) => (
           <ListItem key={item.route} disablePadding>
-            <Link href={'#' + item.route} passHref>
+            <Link href={'/' + item.route} passHref>
               <ListItemButton>
                 <ListItemIcon>
                   <Icon>{item.icon}</Icon>
                 </ListItemIcon>
-                <ListItemText primary={item.name}></ListItemText>
+                <ListItemText
+                  className={styles.headerLinkText}
+                  primary={item.name}
+                ></ListItemText>
               </ListItemButton>
             </Link>
           </ListItem>

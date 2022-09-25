@@ -8,10 +8,11 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
-import SectionCard from '../section_card';
+import SectionCard from '../components/section_card';
 
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
+import { getSectionByRoute } from '../constants/sections';
 
 const Divider = styled(MuiDivider)({
   margin: '1rem 0',
@@ -36,9 +37,7 @@ const about = (
       features, I&apos;m available to chat today!
     </Typography>
     <Link href="#contact" passHref>
-      <Button variant="outlined">
-        Reach out today! (TODO: FIGURE OUT SCROLLING)
-      </Button>
+      <Button variant="outlined">Reach out today!</Button>
     </Link>
 
     <Divider />
@@ -62,12 +61,22 @@ const about = (
   </div>
 );
 
-export default function About() {
+export default function About({ sectionTitle, icon }) {
   return (
     <>
-      <SectionCard title="About" icon="person">
+      <SectionCard title={sectionTitle} icon={icon}>
         {about}
       </SectionCard>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const section = getSectionByRoute('about');
+  return {
+    props: {
+      sectionTitle: section.name,
+      icon: section.icon,
+    },
+  };
 }

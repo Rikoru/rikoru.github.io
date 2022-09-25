@@ -1,6 +1,7 @@
 export const g = {
   title: 'Mircea Digital',
   titleCool: 'Mircea▲Digital',
+  author: 'Mircea Taras',
   license: 'MIT License',
   licenseUri: 'https://opensource.org/licenses/MIT',
   getEmail: () => {

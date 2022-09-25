@@ -1,6 +1,22 @@
 @import 'styles/theming';
 
-.postBody {
-  background: $off-white;
+.postOuterWrapper {
+  h3,
+  h4 {
+    font-family: $headerFont;
+  }
+
+  padding: $innerPadding;
+  background: $innerBacking;
   border-radius: 12px;
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
+.postsInnerWrapper {
+  margin-top: 1rem;
+}
+
+.postsList {
+  list-style: none;
 }

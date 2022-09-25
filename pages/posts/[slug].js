@@ -1,38 +1,46 @@
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
-import { g } from '../../constants/global';
+
 import styles from './posts.module.scss';
+import { getAllPosts, getPostBySlug } from '../../lib/posts';
+
+import PostHeader from '../../components/blog_post/post_header';
+import PostBody from '../../components/blog_post/post_body';
+import PostTitle from '../../components/blog_post/post_title';
 
 import ErrorPage from 'next/error';
-import Head from 'next/head';
+import markdownToHtml from '../../lib/markdownToHtml';
+import { IconButton } from '@mui/material';
+import BackArrow from '@mui/icons-material/ArrowBackIosNewRounded';
+import Link from 'next/link';
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
+    return <ErrorPage statusCode={404} withDarkMode />;
   }
   return (
     <>
-      {router.isFallback ? (
-        <PostTitle>...</PostTitle>
-      ) : (
-        <>
-          <article className={styles.postBody}>
-            <Head>
-              <title>
-                {post.title} | {g.title}
-              </title>
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.content} />
-          </article>
-        </>
-      )}
+      <div className={styles.postOuterWrapper}>
+        <Link href="/posts" passHref>
+          <IconButton aria-label="Go back">
+            <BackArrow />
+          </IconButton>
+        </Link>
+        {router.isFallback ? (
+          <PostTitle>...</PostTitle>
+        ) : (
+          <>
+            <article className={styles.postInnerWrapper}>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+              />
+              <PostBody content={post.content} />
+            </article>
+          </>
+        )}
+      </div>
     </>
   );
 }
@@ -42,7 +50,6 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
     'ogImage',
     'coverImage',

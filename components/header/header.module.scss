@@ -12,6 +12,8 @@
   }
 
   h1.headerTitle {
+    font-family: $headerFont;
+    font-weight: 400;
     font-size: 1.8rem;
     line-height: 4rem;
     // text-align: center;
@@ -40,4 +42,9 @@
   color: $off-white;
   width: 100%;
   padding: $innerPadding 0;
+}
+
+.headerLinkText > span {
+  font-family: $headerFont;
+  font-size: 1.6rem;
 }

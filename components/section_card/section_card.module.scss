@@ -28,11 +28,6 @@ $borderRadius: 12px;
 .cardHeader {
   z-index: 1;
   background: rgb(63, 80, 119);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(63, 80, 119, 1) 0%,
-  //   rgba(102, 153, 204, 1) 100%
-  // );
   padding: 0;
   display: flex;
   justify-content: center;
@@ -49,6 +44,7 @@ $borderRadius: 12px;
   }
 
   h2 {
+    font-family: $headerFont;
     color: $off-white;
     line-height: 6rem;
     font-weight: 400;

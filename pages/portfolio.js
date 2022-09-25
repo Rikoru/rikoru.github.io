@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
-import MiniCard from '../mini_card';
-import SectionCard from '../section_card';
+import MiniCard from '../components/mini_card';
+import SectionCard from '../components/section_card';
+import { getSectionByRoute } from '../constants/sections';
 
-import { getProjects } from '../projects/projects';
+import { getProjects } from '../components/projects/projects';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import Link from 'next/link';
 import { IconButton, Stack } from '@mui/material';
@@ -29,15 +30,25 @@ const prepProjects = (projects) => {
   });
 };
 
-export default function Portfolio() {
+export default function Portfolio({ sectionTitle, icon }) {
   const projects = useMemo(() => getProjects());
   const projectsSection = useMemo(() => prepProjects(projects), [projects]);
 
   return (
-    <SectionCard title="Portfolio" icon="list">
+    <SectionCard title={sectionTitle} icon={icon}>
       <Grid2 container spacing={2} columns={{ xs: 6, sm: 12 }}>
         {projectsSection}
       </Grid2>
     </SectionCard>
   );
+}
+
+export async function getStaticProps() {
+  const section = getSectionByRoute('portfolio');
+  return {
+    props: {
+      sectionTitle: section.name,
+      icon: section.icon,
+    },
+  };
 }
