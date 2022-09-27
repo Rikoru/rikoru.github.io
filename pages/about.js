@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { styled } from '@mui/material/styles';
 
@@ -12,7 +13,7 @@ import SectionCard from '../components/section_card';
 
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
-import { getSectionByRoute } from '../constants/sections';
+import { getSectionPropsByRoute } from '../constants/sections';
 
 const Divider = styled(MuiDivider)({
   margin: '1rem 0',
@@ -64,7 +65,7 @@ const about = (
 export default function About({ sectionTitle, icon }) {
   return (
     <>
-      <SectionCard title={sectionTitle} icon={icon}>
+      <SectionCard sectionTitle={sectionTitle} icon={icon}>
         {about}
       </SectionCard>
     </>
@@ -72,11 +73,14 @@ export default function About({ sectionTitle, icon }) {
 }
 
 export async function getStaticProps() {
-  const section = getSectionByRoute('about');
   return {
     props: {
-      sectionTitle: section.name,
-      icon: section.icon,
+      ...getSectionPropsByRoute('about'),
     },
   };
 }
+
+About.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};

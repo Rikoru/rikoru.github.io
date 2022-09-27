@@ -7,13 +7,13 @@ import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 import { Card, CardContent } from '@mui/material';
 
-export default function SectionCard({ title, icon, children }) {
+export default function SectionCard({ sectionTitle, icon, children }) {
   return (
     <div className={styles.cardWrapper}>
       <Card className={styles.cardFrame}>
         <div className={styles.cardHeader}>
           <Icon className={styles.cardIcon}>{icon}</Icon>
-          <Typography variant="h2">{title}</Typography>
+          <Typography variant="h2">{sectionTitle}</Typography>
         </div>
         <Card className={styles.cardBody}>
           <CardContent className={styles.cardBodyContent}>
@@ -25,7 +25,7 @@ export default function SectionCard({ title, icon, children }) {
   );
 }
 SectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   children: PropTypes.element,
 };

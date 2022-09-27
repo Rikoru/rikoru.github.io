@@ -1,0 +1,8 @@
+@import 'styles/theming';
+
+.pageWrapper {
+  .cardPageWrapper {
+    border: 4px solid $accent;
+  }
+  margin: 0 auto;
+}

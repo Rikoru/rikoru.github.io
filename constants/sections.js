@@ -21,10 +21,19 @@ const pageLabels = [
   },
 ];
 
+export const getSectionPropsByRoute = (route) => {
+  const section = pageLabels.find((label) => label.route === route);
+
+  if (!section) {
+    console.error('Section was not found, route:', route);
+    return { sectionTitle: null, icon: null };
+  }
+
+  const { name, icon } = section;
+
+  return { sectionTitle: name, icon: icon };
+};
+
 export default function Sections() {
   return pageLabels;
-}
-
-export function getSectionByRoute(route) {
-  return pageLabels.find((item) => item.route === route) || {};
 }
