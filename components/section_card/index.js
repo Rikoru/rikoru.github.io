@@ -25,7 +25,7 @@ export default function SectionCard({ sectionTitle, icon, children }) {
   );
 }
 SectionCard.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string,
+  icon: PropTypes.string,
   children: PropTypes.element,
 };

@@ -30,7 +30,7 @@ const AccordionSummary = styled((props) => (
     sx={{ fontSize: '0.9rem' }}
     {...props}
   />
-))(({ theme }) => ({
+))(() => ({
   background: 'rgba(0, 0, 0, 0.08)',
   justifyItems: 'center',
 }));

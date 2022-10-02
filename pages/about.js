@@ -64,11 +64,11 @@ const about = (
 
 export default function About({ sectionTitle, icon }) {
   return (
-    <>
+    <React.Fragment>
       <SectionCard sectionTitle={sectionTitle} icon={icon}>
         {about}
       </SectionCard>
-    </>
+    </React.Fragment>
   );
 }
 

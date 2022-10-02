@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './markdown.module.scss';
 
 export default function PostBody({ content }) {
@@ -10,3 +13,7 @@ export default function PostBody({ content }) {
     </div>
   );
 }
+
+PostBody.propTypes = {
+  content: PropTypes.any,
+};

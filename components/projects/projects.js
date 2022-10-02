@@ -7,7 +7,7 @@ const projects = [
     title: 'Personal Site',
     subTitle: 'React JS',
     body: (
-      <>
+      <React.Fragment>
         <Typography paragraph>
           I built this site with NextJS + React + Material UI. If you look
           through the source you can see the old version of the site, which was
@@ -19,7 +19,7 @@ const projects = [
           will continue to evolve with time, but this is where it has currently
           landed.
         </Typography>
-      </>
+      </React.Fragment>
     ),
     pageLink: 'https://github.com/Rikoru/rikoru.github.io',
   },
@@ -27,18 +27,18 @@ const projects = [
     title: 'Searchable Card React Component',
     subTitle: 'React JS',
     body: (
-      <>
+      <React.Fragment>
         <Typography paragraph>Details TBD</Typography>
-      </>
+      </React.Fragment>
     ),
   },
   {
     title: 'Other',
     subTitle: 'React JS',
     body: (
-      <>
+      <React.Fragment>
         <Typography paragraph>Details TBD</Typography>
-      </>
+      </React.Fragment>
     ),
   },
 ];

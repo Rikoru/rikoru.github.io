@@ -21,14 +21,14 @@ const prepTitleSection = (title, subTitle = '') =>
 
 const prepFooterSection = (pageLink) =>
   pageLink && (
-    <>
+    <React.Fragment>
       <Divider />
       <div className={styles.miniCardFooter}>
         <Button variant="outlined" href={pageLink} startIcon={<CodeRounded />}>
           Source
         </Button>
       </div>
-    </>
+    </React.Fragment>
   );
 
 export default function MiniCard({ title, subTitle, pageLink, children }) {

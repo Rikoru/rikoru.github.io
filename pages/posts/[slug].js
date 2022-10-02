@@ -1,18 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { useRouter } from 'next/router';
 
 import styles from './posts.module.scss';
-import { getAllPosts, getPostBySlug } from '../../lib/posts';
+import { getAllPosts, getPostBySlug, postProps } from '../../lib/posts';
 
 import PostHeader from '../../components/blog_post/post_header';
 import PostBody from '../../components/blog_post/post_body';
-import PostTitle from '../../components/blog_post/post_title';
 
 import ErrorPage from 'next/error';
 import markdownToHtml from '../../lib/markdownToHtml';
-import { IconButton } from '@mui/material';
-import BackArrow from '@mui/icons-material/ArrowBackIosNewRounded';
-import Link from 'next/link';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -20,29 +18,26 @@ export default function Post({ post }) {
     return <ErrorPage statusCode={404} withDarkMode />;
   }
   return (
-    <>
+    <React.Fragment>
       <div className={styles.postOuterWrapper}>
-        <Link href="/posts" passHref>
-          <IconButton aria-label="Go back">
-            <BackArrow />
-          </IconButton>
-        </Link>
-        {router.isFallback ? (
-          <PostTitle>...</PostTitle>
-        ) : (
-          <>
-            <article className={styles.postInnerWrapper}>
+        <article className={styles.postInnerWrapper}>
+          {router.isFallback ? (
+            <React.Fragment>
+              <PostHeader title="..." />
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
               />
               <PostBody content={post.content} />
-            </article>
-          </>
-        )}
+            </React.Fragment>
+          )}
+        </article>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
@@ -81,3 +76,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+Post.propTypes = {
+  post: PropTypes.shape(postProps),
+};

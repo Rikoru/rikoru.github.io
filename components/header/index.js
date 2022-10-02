@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { g } from '../../constants/global';
 import styles from './header.module.scss';
 
@@ -8,21 +7,19 @@ import Icon from '@mui/material/Icon';
 
 import Sections from '../../constants/sections';
 import {
-  Box,
   List,
   ListItem,
   ListItemText,
   ListItemButton,
   Toolbar,
   Typography,
-  Menu,
-  MenuItem,
   ListItemIcon,
   IconButton,
-  Drawer,
 } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
+import Drawer from '@mui/material/Drawer';
+import Box from '@mui/material/Box';
 
 import MenuRounded from '@mui/icons-material/MenuRounded';
 
@@ -60,7 +57,7 @@ export default function Header() {
   const container = () => window.document.body;
 
   return (
-    <>
+    <React.Fragment>
       <AppBar className={styles.header} component="nav" position="fixed">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
@@ -95,6 +92,6 @@ export default function Header() {
           {drawer}
         </Drawer>
       </Box>
-    </>
+    </React.Fragment>
   );
 }

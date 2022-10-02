@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { g } from '../constants/global';
-import { getSectionByRoute } from '../constants/sections';
-
-import SectionCard from '../components/section_card';
+import { getSectionPropsByRoute } from '../constants/sections';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -13,6 +11,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 import SendRounded from '@mui/icons-material/SendRounded';
+import { CardPage } from '../components/page_types';
 
 const SendMail = ({ fields }) => {
   const { subject, body } = fields;
@@ -35,14 +34,14 @@ const SendMail = ({ fields }) => {
 };
 
 const contactBlurb = (
-  <>
+  <React.Fragment>
     <Typography paragraph>
       My inbox is open if you&apos;d like to reach out.
     </Typography>
     <Typography paragraph>
       Let&apos;s chat so we can figure out what I can do for you.
     </Typography>
-  </>
+  </React.Fragment>
 );
 
 export default function Contact({ sectionTitle, icon }) {
@@ -56,9 +55,9 @@ export default function Contact({ sectionTitle, icon }) {
   };
 
   return (
-    <>
-      <SectionCard title={sectionTitle} icon={icon}>
-        <>
+    <React.Fragment>
+      <CardPage sectionTitle={sectionTitle} icon={icon}>
+        <React.Fragment>
           {contactBlurb}
           <Box component="form" autoComplete="off">
             <Stack spacing={2}>
@@ -81,10 +80,18 @@ export default function Contact({ sectionTitle, icon }) {
             </Stack>
             <SendMail fields={values} />
           </Box>
-        </>
-      </SectionCard>
-    </>
+        </React.Fragment>
+      </CardPage>
+    </React.Fragment>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      ...getSectionPropsByRoute('contact'),
+    },
+  };
 }
 SendMail.propTypes = {
   fields: PropTypes.shape({
@@ -93,12 +100,7 @@ SendMail.propTypes = {
   }),
 };
 
-export async function getStaticProps() {
-  const section = getSectionByRoute('contact');
-  return {
-    props: {
-      sectionTitle: section.name,
-      icon: section.icon,
-    },
-  };
-}
+Contact.propTypes = {
+  sectionTitle: PropTypes.string,
+  icon: PropTypes.string,
+};

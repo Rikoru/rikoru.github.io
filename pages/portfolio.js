@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
 import MiniCard from '../components/mini_card';
-import SectionCard from '../components/section_card';
-import { getSectionByRoute } from '../constants/sections';
+import { getSectionPropsByRoute } from '../constants/sections';
+import { CardPage } from '../components/page_types';
 
 import { getProjects } from '../components/projects/projects';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
@@ -15,7 +16,7 @@ const prepProjects = (projects) => {
     return (
       <Grid2 xs={6} key={title}>
         <MiniCard title={title} subTitle={subTitle}>
-          <>
+          <React.Fragment>
             <Stack direction="row" justifyContent="flex-end">
               <Link href={pageLink || ''} passHref>
                 <IconButton aria-label="source">
@@ -23,7 +24,7 @@ const prepProjects = (projects) => {
                 </IconButton>
               </Link>
             </Stack>
-          </>
+          </React.Fragment>
         </MiniCard>
       </Grid2>
     );
@@ -31,24 +32,28 @@ const prepProjects = (projects) => {
 };
 
 export default function Portfolio({ sectionTitle, icon }) {
+  console.log('loaded:', sectionTitle, icon);
   const projects = useMemo(() => getProjects());
   const projectsSection = useMemo(() => prepProjects(projects), [projects]);
 
   return (
-    <SectionCard title={sectionTitle} icon={icon}>
+    <CardPage sectionTitle={sectionTitle} icon={icon}>
       <Grid2 container spacing={2} columns={{ xs: 6, sm: 12 }}>
         {projectsSection}
       </Grid2>
-    </SectionCard>
+    </CardPage>
   );
 }
 
 export async function getStaticProps() {
-  const section = getSectionByRoute('portfolio');
   return {
     props: {
-      sectionTitle: section.name,
-      icon: section.icon,
+      ...getSectionPropsByRoute('portfolio'),
     },
   };
 }
+
+Portfolio.propTypes = {
+  sectionTitle: PropTypes.string,
+  icon: PropTypes.string,
+};
