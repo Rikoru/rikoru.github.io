@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
+
 import Typography from '@mui/material/Typography';
 
 const projects = [
@@ -10,37 +12,35 @@ const projects = [
       <React.Fragment>
         <Typography paragraph>
           I built this site with NextJS + React + Material UI. If you look
-          through the source you can see the old version of the site, which was
-          built with HTML and a makefile.
+          through the source code (in the "old" folder) you can see the previous
+          version of the site, which was built with HTML and a makefile. It'll
+          continue to evolve, so I recommend checking in every now and again.
         </Typography>
-        <Typography paragraph>
-          A lot has changed since I first made it, given that I was still in
-          University when I started working on the original version. I think it
-          will continue to evolve with time, but this is where it has currently
-          landed.
-        </Typography>
+        <>
+          <Link href="/posts">I've started blogging about the process!</Link>
+        </>
       </React.Fragment>
     ),
     pageLink: 'https://github.com/Rikoru/rikoru.github.io',
   },
-  {
-    title: 'Searchable Card React Component',
-    subTitle: 'React JS',
-    body: (
-      <React.Fragment>
-        <Typography paragraph>Details TBD</Typography>
-      </React.Fragment>
-    ),
-  },
-  {
-    title: 'Other',
-    subTitle: 'React JS',
-    body: (
-      <React.Fragment>
-        <Typography paragraph>Details TBD</Typography>
-      </React.Fragment>
-    ),
-  },
+  // {
+  //   title: 'Searchable Card React Component',
+  //   subTitle: 'React JS',
+  //   body: (
+  //     <React.Fragment>
+  //       <Typography paragraph>Details TBD</Typography>
+  //     </React.Fragment>
+  //   ),
+  // },
+  // {
+  //   title: 'Other',
+  //   subTitle: 'React JS',
+  //   body: (
+  //     <React.Fragment>
+  //       <Typography paragraph>Details TBD</Typography>
+  //     </React.Fragment>
+  //   ),
+  // },
 ];
 
 export function getProjects() {

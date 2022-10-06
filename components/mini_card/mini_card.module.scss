@@ -1,15 +1,24 @@
 @import 'styles/theming';
 
+$dark: rgba(0, 0, 0, 0.87);
+
 .miniCardFrame {
-  border: 1px solid $accent;
+  // border: 1px solid $accent;
   padding: $innerPadding;
   border-radius: $outerRadius;
   background: $off-white;
+  color: $dark;
+  a {
+    color: $dark;
+    &:hover {
+      color: $accent;
+    }
+  }
 }
 
 .miniCardTitle h3 {
   font-family: $headerFont;
-  color: rgba(0, 0, 0, 0.87);
+  color: $dark;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -18,8 +27,14 @@
   color: $faded;
 }
 
+.miniCardBody {
+  padding-top: $innerPadding;
+  width: 100%;
+}
+
 .miniCardFooter {
   display: flex;
   justify-content: flex-end;
   padding-top: $innerPadding;
+  margin-bottom: -10px;
 }

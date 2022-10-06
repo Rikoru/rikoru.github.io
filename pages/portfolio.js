@@ -12,19 +12,11 @@ import CodeRounded from '@mui/icons-material/CodeRounded';
 
 const prepProjects = (projects) => {
   return projects.map((item) => {
-    const { title, subTitle, pageLink } = item;
+    const { title, subTitle, pageLink, body } = item;
     return (
       <Grid2 xs={6} key={title}>
-        <MiniCard title={title} subTitle={subTitle}>
-          <React.Fragment>
-            <Stack direction="row" justifyContent="flex-end">
-              <Link href={pageLink || ''} passHref>
-                <IconButton aria-label="source">
-                  <CodeRounded />
-                </IconButton>
-              </Link>
-            </Stack>
-          </React.Fragment>
+        <MiniCard title={title} subTitle={subTitle} pageLink={pageLink}>
+          {body}
         </MiniCard>
       </Grid2>
     );
@@ -38,7 +30,7 @@ export default function Portfolio({ sectionTitle, icon }) {
 
   return (
     <CardPage sectionTitle={sectionTitle} icon={icon}>
-      <Grid2 container spacing={2} columns={{ xs: 6, sm: 12 }}>
+      <Grid2 container spacing={2} columns={{ xs: 6, sm: 6 }}>
         {projectsSection}
       </Grid2>
     </CardPage>

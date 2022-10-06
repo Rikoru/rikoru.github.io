@@ -24,6 +24,7 @@ import Box from '@mui/material/Box';
 import MenuRounded from '@mui/icons-material/MenuRounded';
 
 export default function Header() {
+  const splitTitle = g.title.split(' ');
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const sections = useMemo(() => Sections());
 
@@ -67,9 +68,14 @@ export default function Header() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              <Link href="/">{g.titleCool}</Link>
+              <Link href="/">
+                <a>
+                  {splitTitle[0]}
+                  <br />
+                  {splitTitle[1]}
+                </a>
+              </Link>
             </Typography>
-
             <IconButton
               onClick={handleDrawerToggle}
               aria-label="sections"

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import styles from './mini_card.module.scss';
 
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import CodeRounded from '@mui/icons-material/CodeRounded';
 import Stack from '@mui/material/Stack';
@@ -12,7 +13,7 @@ import Typography from '@mui/material/Typography';
 const prepTitleSection = (title, subTitle = '') =>
   title && (
     <div className={styles.miniCardTitle}>
-      <Stack direction="row" alignItems="center" spacing={2}>
+      <Stack direction="row" alignItems="flex-end" spacing={2}>
         <Typography variant="h3">{title}</Typography>
         <Typography className={styles.miniCardSubtitle}>{subTitle}</Typography>
       </Stack>
@@ -22,11 +23,15 @@ const prepTitleSection = (title, subTitle = '') =>
 const prepFooterSection = (pageLink) =>
   pageLink && (
     <React.Fragment>
-      <Divider />
       <div className={styles.miniCardFooter}>
-        <Button variant="outlined" href={pageLink} startIcon={<CodeRounded />}>
-          Source
-        </Button>
+        <Divider />
+        <Stack direction="row" justifyContent="flex-end">
+          <Link href={pageLink || ''} passHref>
+            <IconButton aria-label="source">
+              <CodeRounded />
+            </IconButton>
+          </Link>
+        </Stack>
       </div>
     </React.Fragment>
   );
