@@ -22,44 +22,74 @@ const Divider = styled(MuiDivider)({
 
 const about = (
   <div>
-    <Typography>Mircea Taras</Typography>
-    <Typography sx={{ fontStyle: 'italic' }}>
-      Full-stack Software Developer &amp; Consultant
-    </Typography>
+    <Stack>
+      <Typography variant="h3">Mircea Taras</Typography>
+      <Typography variant="h4" sx={{ fontStyle: 'italic' }}>
+        Full-stack Software Developer &amp; Consultant
+      </Typography>
+    </Stack>
 
     <Divider />
 
     <Typography paragraph>
-      Hi, my name is Mircea, among my various interests, I also moonlight as a
-      technical consultant. With 3+ years in software development, I&apos;ve got
-      a decent list of skills I can share with anyone that needs them.
+      Suspendisse potenti. Curabitur dui magna, euismod dignissim pellentesque
+      ac, ultricies vel enim. Sed venenatis leo nec massa tincidunt, ut
+      imperdiet nibh venenatis. Aenean libero enim, accumsan ut laoreet et,
+      euismod sit amet orci. Donec in convallis neque. Aenean non tellus et
+      justo convallis tempor eu vel neque. Morbi eu blandit purus, sed mollis
+      dui. Aliquam vehicula pharetra bibendum. Vestibulum ante ipsum primis in
+      faucibus orci luctus et ultrices posuere cubilia curae; Fusce sit amet
+      nisl ut mi aliquet porta vel vitae ligula. Quisque sed tristique orci.
+      Nullam sit amet quam eget orci facilisis mattis a non ligula.
     </Typography>
     <Typography paragraph>
-      Whether you need help with your internal tools or your customer-facing
-      features, I&apos;m available to chat today!
+      Fusce consectetur facilisis velit, sit amet tincidunt tellus porta non.
+      Praesent sit amet pharetra sem. Ut blandit gravida lacus, at rhoncus massa
+      lobortis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+      Vivamus vel imperdiet est. Sed vitae ullamcorper neque, sed efficitur
+      turpis. Cras ut blandit quam. In ac porta nulla. Curabitur condimentum
+      eget orci quis pellentesque. Donec cursus consectetur magna, et fringilla
+      dolor fringilla in. Fusce sed quam suscipit, malesuada mauris quis, luctus
+      dui.
     </Typography>
-    <Link href="#contact" passHref>
-      <Button variant="outlined">Reach out today!</Button>
+    <Link href="/contact" passHref>
+      <a>
+        <Typography variant="h4">Reach out today!</Typography>
+      </a>
     </Link>
 
     <Divider />
-
     <Typography paragraph>
-      If you&apos;re looking for my creative endeavours:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
+      fringilla leo. Mauris mi orci, iaculis dictum lacus vitae, dapibus rhoncus
+      lorem. Nulla vitae viverra risus, vel imperdiet dui. Praesent blandit
+      massa et tempor fringilla. Fusce sit amet vulputate ex. Sed rhoncus lacus
+      sit amet mauris suscipit, et viverra libero varius. Phasellus et dolor
+      felis. Quisque varius cursus lectus vitae commodo. Sed feugiat mi velit,
+      nec blandit lacus scelerisque at.
     </Typography>
-
-    <Stack spacing={1} direction="row">
-      <Link href="https://www.instagram.com/meerkat.art/" passHref>
-        <Button variant="outlined" startIcon={<DrawIcon />}>
-          Art Instagram
-        </Button>
-      </Link>
-      <Link href="https://www.instagram.com/mircea.crafts/" passHref>
-        <Button variant="outlined" startIcon={<CraftIcon />}>
-          Crafts Instagram
-        </Button>
-      </Link>
-    </Stack>
+    <Typography paragraph>
+      Nulla ut purus sollicitudin, consequat odio sed, ornare nulla. In pretium
+      molestie tincidunt. Maecenas rutrum vulputate semper. Fusce consectetur
+      eros nec turpis facilisis, ac tempus elit iaculis. Nulla facilisis pretium
+      neque. Vestibulum placerat, massa eu hendrerit egestas, tellus enim
+      eleifend dolor, in pulvinar nisi tellus pretium nunc. Suspendisse potenti.
+      Proin ligula eros, congue vestibulum cursus vel, suscipit nec risus.
+      Vestibulum ornare lorem eget nunc egestas sodales. Nullam gravida
+      scelerisque leo, ac varius nisi bibendum et. Cras pretium, tortor sed
+      tristique malesuada, tortor metus interdum ligula, eget viverra tellus
+      libero a massa. Mauris dictum suscipit volutpat. Maecenas bibendum ornare
+      nisi, varius pellentesque urna condimentum at. Fusce lobortis augue
+      dignissim interdum rutrum. Nulla facilisi. Sed semper bibendum accumsan.
+    </Typography>
+    <Typography paragraph>
+      Donec blandit neque sed libero interdum, sit amet venenatis ligula
+      tincidunt. In hendrerit quis turpis non porttitor. Praesent rhoncus
+      consequat augue, sit amet viverra metus sodales sit amet. Nunc rhoncus
+      condimentum massa fermentum gravida. Praesent id ligula mattis est auctor
+      malesuada a vel urna. Vestibulum sed enim efficitur, pretium ex rutrum,
+      vestibulum neque. Sed malesuada nisl a dolor finibus porttitor.{' '}
+    </Typography>
   </div>
 );
 

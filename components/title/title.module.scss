@@ -1,0 +1,13 @@
+@import 'styles/theming';
+
+.siteTitle {
+  * {
+    font-family: $headerFont;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 2.3rem;
+  }
+}

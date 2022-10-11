@@ -3,20 +3,11 @@
 .header {
   // Outer
   position: fixed;
-  padding: $innerPadding;
   align-self: center;
   background: $theme;
 
   & * a:hover {
     color: $accent;
-  }
-
-  h1.headerTitle {
-    font-family: $headerFont;
-    font-weight: 400;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 1.6rem;
   }
 
   .menuButton {
@@ -36,6 +27,14 @@
     }
 
     align-self: center;
+  }
+
+  .navLinks {
+    a {
+      font-family: $headerFont;
+      font-size: 400;
+      font-size: 2rem;
+    }
   }
 
   // Basic properties

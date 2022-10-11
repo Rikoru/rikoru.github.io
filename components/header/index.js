@@ -15,6 +15,7 @@ import {
   Typography,
   ListItemIcon,
   IconButton,
+  Stack,
 } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
@@ -22,9 +23,9 @@ import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 
 import MenuRounded from '@mui/icons-material/MenuRounded';
+import SiteTitle from '../title';
 
 export default function Header() {
-  const splitTitle = g.title.split(' ');
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const sections = useMemo(() => Sections());
 
@@ -55,37 +56,39 @@ export default function Header() {
     </Box>
   );
 
+  const navLinks = (
+    <Stack direction="row" spacing={2} className={styles.navLinks}>
+      {sections.map((item) => (
+        <Link href={'/' + item.route}>{item.name}</Link>
+      ))}
+    </Stack>
+  );
+
   const container = () => window.document.body;
 
   return (
     <React.Fragment>
       <AppBar className={styles.header} component="nav" position="fixed">
-        <Container maxWidth="lg">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h1"
-              className={styles.headerTitle}
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              <Link href="/">
-                <a>
-                  {splitTitle[0]}
-                  <br />
-                  {splitTitle[1]}
-                </a>
-              </Link>
-            </Typography>
+        <Container sx={{ maxWidth: 'unset' }}>
+          <Toolbar disableGutters justifyContent="space-between">
+            <Link href="/">
+              <a>
+                <SiteTitle variant="h1" />
+              </a>
+            </Link>
             <IconButton
               onClick={handleDrawerToggle}
               aria-label="sections"
               className={styles.menuButton}
+              sx={{ display: { sm: 'none' }, alignSelf: 'flex-end' }}
             >
               <MenuRounded />
             </IconButton>
+            {navLinks}
           </Toolbar>
         </Container>
       </AppBar>
+      {/* Drawer container */}
       <Box component="nav">
         <Drawer
           anchor="right"
@@ -94,6 +97,9 @@ export default function Header() {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{ keepMounted: true }}
+          sx={{
+            display: { sm: 'none' },
+          }}
         >
           {drawer}
         </Drawer>
