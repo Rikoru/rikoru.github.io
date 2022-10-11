@@ -4,6 +4,19 @@
   margin: 0 auto;
 }
 
+.modernPageWrapper {
+  h2 {
+    font-family: $headerFont;
+    font-weight: 600;
+  }
+  .modernPageIcon {
+    font-size: 3rem;
+  }
+  padding: $innerPadding;
+  margin: 0 auto;
+  max-width: $innerMaxWidth;
+}
+
 .pageWrapper {
   margin: 0 auto;
   padding: $innerPadding;

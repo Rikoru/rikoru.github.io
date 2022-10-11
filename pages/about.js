@@ -14,6 +14,7 @@ import SectionCard from '../components/section_card';
 import DrawIcon from '@mui/icons-material/BrushRounded';
 import CraftIcon from '@mui/icons-material/ContentCutRounded';
 import { getSectionPropsByRoute } from '../constants/sections';
+import { ModernPage } from '../components/page_types';
 
 const Divider = styled(MuiDivider)({
   margin: '1rem 0',
@@ -65,9 +66,9 @@ const about = (
 export default function About({ sectionTitle, icon }) {
   return (
     <React.Fragment>
-      <SectionCard sectionTitle={sectionTitle} icon={icon}>
+      <ModernPage sectionTitle={sectionTitle} icon={icon}>
         {about}
-      </SectionCard>
+      </ModernPage>
     </React.Fragment>
   );
 }
