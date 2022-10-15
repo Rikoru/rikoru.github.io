@@ -5,16 +5,19 @@ import styles from './footer.module.scss';
 
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import { Box, Stack } from '@mui/material';
 
 export default function Footer() {
+  const footerLinks = []
+
   return (
     <section className={styles.footer}>
-      <Typography>
-        A site by <strong>Mircea Taras</strong>&nbsp;&ndash;&nbsp;
-        <Link sx={{ fontWeight: 600 }} color="inherit" href={g.licenseUri}>
-          {g.license}
-        </Link>
-      </Typography>
+      <Typography>{g.author}</Typography>
+      <Box sx={{ display: 'block' }}>
+        <Stack direction="row" spacing={2}>
+          {}
+        </Stack>
+      </Box>
     </section>
   );
 }

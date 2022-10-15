@@ -23,7 +23,7 @@ const pageLabels = [
 
 export const getSectionPropsByRoute = (route) => {
   const section = pageLabels.find((label) => label.route === route);
-  console.log(section);
+  // console.log(section);
 
   if (!section) {
     console.error('Section was not found, route:', route);

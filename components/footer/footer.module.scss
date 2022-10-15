@@ -9,13 +9,19 @@
   min-height: 32px;
   height: 3rem;
   z-index: 999;
+  padding: $innerPadding;
 
   // Inner
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   // Theming
   background: $theme;
   color: $off-white;
+
+  p {
+    font-family: $headerFont;
+    font-size: 1.4rem;
+  }
 }

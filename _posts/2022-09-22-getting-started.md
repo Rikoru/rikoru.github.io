@@ -30,3 +30,5 @@ There was a point where I had decided I would include my art somehow. My first a
   </Link>
 </Stack>
 ```
+
+That will eventually be migrated to its own page.

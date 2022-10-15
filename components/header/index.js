@@ -69,24 +69,27 @@ export default function Header() {
   return (
     <React.Fragment>
       <AppBar className={styles.header} component="nav" position="fixed">
-        <Container sx={{ maxWidth: 'unset' }}>
-          <Toolbar disableGutters justifyContent="space-between">
+        <Toolbar sx={{ display: 'flex' }}>
+          <Box sx={{ flexGrow: 1, alignSelf: 'flex-start' }}>
             <Link href="/">
               <a>
                 <SiteTitle variant="h1" />
               </a>
             </Link>
-            <IconButton
-              onClick={handleDrawerToggle}
-              aria-label="sections"
-              className={styles.menuButton}
-              sx={{ display: { sm: 'none' }, alignSelf: 'flex-end' }}
-            >
-              <MenuRounded />
-            </IconButton>
-            {navLinks}
-          </Toolbar>
-        </Container>
+          </Box>
+          <IconButton
+            onClick={handleDrawerToggle}
+            aria-label="sections"
+            className={styles.menuButton}
+            sx={{
+              display: { sm: 'none' },
+              alignSelf: 'flex-end',
+            }}
+          >
+            <MenuRounded />
+          </IconButton>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>{navLinks}</Box>
+        </Toolbar>
       </AppBar>
       {/* Drawer container */}
       <Box component="nav">
