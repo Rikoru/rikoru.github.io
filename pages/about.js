@@ -39,14 +39,16 @@ export default function About({ sectionTitle, icon }) {
     </Avatar>
   );
 
-  const NameTitle = ({ name, title, subTitle }) => (
-    <Stack>
-      <Typography variant="h3">{name}</Typography>
-      <Typography variant="h4" sx={{ fontStyle: 'italic' }}>
+  const NameTitle = ({ name, title, subTitle = null }) => (
+    <Stack sx={{ marginRight: '12px' }} alignItems="flex-end">
+      <Typography variant="h3" sx={{ lineHeight: '3rem' }}>
+        {name}
+      </Typography>
+      <Typography variant="h4" sx={{ lineHeight: '2rem', textAlign: 'right' }}>
         {title}
       </Typography>
       {subTitle && (
-        <Typography variant="h5" sx={{ fontStyle: 'italic' }}>
+        <Typography variant="h5" sx={{ lineHeight: '1.5rem' }}>
           {subTitle}
         </Typography>
       )}
@@ -55,11 +57,7 @@ export default function About({ sectionTitle, icon }) {
 
   const about = (
     <div>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-start"
-      >
+      <Stack direction="row" justifyContent="center" alignItems="flex-start">
         <NameTitle
           name={g.author}
           title="Full-stack Software Developer"
