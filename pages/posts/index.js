@@ -8,27 +8,27 @@ import { getAllPosts } from '../../lib/posts';
 import { getSectionPropsByRoute } from '../../constants/sections';
 
 import { Typography } from '@mui/material';
-import { CardPage } from '../../components/page_types';
+import { ModernPage } from '../../components/page_types';
 
 export default function Posts({ posts, sectionTitle, icon }) {
   return (
     <React.Fragment>
-      <CardPage sectionTitle={sectionTitle} icon={icon}>
+      <ModernPage sectionTitle={sectionTitle} icon={icon}>
         <div className={styles.postInnerWrapper}>
           <ul className={styles.postsList}>
             {posts.map(({ slug, title, date }) => (
               <li key={slug}>
                 <Link href={`/posts/${slug}`}>
                   <a>
-                    <Typography variant="subtitle">{date}</Typography>
-                    <Typography>{title}</Typography>
+                    <Typography variant="h3">{date}</Typography>
+                    <Typography variant="h4">{title}</Typography>
                   </a>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-      </CardPage>
+      </ModernPage>
     </React.Fragment>
   );
 }

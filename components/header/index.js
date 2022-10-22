@@ -77,17 +77,19 @@ export default function Header() {
               </a>
             </Link>
           </Box>
+          {/* Mobile Button */}
           <IconButton
             onClick={handleDrawerToggle}
             aria-label="sections"
             className={styles.menuButton}
             sx={{
               display: { sm: 'none' },
-              alignSelf: 'flex-end',
+              alignSelf: 'center',
             }}
           >
             <MenuRounded />
           </IconButton>
+          {/* Regular Nav Links */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>{navLinks}</Box>
         </Toolbar>
       </AppBar>

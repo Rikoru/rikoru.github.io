@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 import SendRounded from '@mui/icons-material/SendRounded';
-import { CardPage } from '../components/page_types';
+import { ModernPage } from '../components/page_types';
 
 const SendMail = ({ fields }) => {
   const { subject, body } = fields;
@@ -35,10 +35,10 @@ const SendMail = ({ fields }) => {
 
 const contactBlurb = (
   <React.Fragment>
-    <Typography paragraph>
+    <Typography variant="h3">
       My inbox is open if you&apos;d like to reach out.
     </Typography>
-    <Typography paragraph>
+    <Typography variant="h4">
       Let&apos;s chat so we can figure out what I can do for you.
     </Typography>
   </React.Fragment>
@@ -56,21 +56,19 @@ export default function Contact({ sectionTitle, icon }) {
 
   return (
     <React.Fragment>
-      <CardPage sectionTitle={sectionTitle} icon={icon}>
+      <ModernPage sectionTitle={sectionTitle} icon={icon}>
         <React.Fragment>
           {contactBlurb}
-          <Box component="form" autoComplete="off">
+          <Box sx={{ marginTop: '2rem' }} component="form" autoComplete="off">
             <Stack spacing={2}>
               <TextField
                 required
-                size="small"
                 onChange={handleChangeForm('subject')}
                 id="subject-field"
                 label="Subject"
               />
               <TextField
                 required
-                size="small"
                 onChange={handleChangeForm('body')}
                 multiline
                 rows={4}
@@ -81,7 +79,7 @@ export default function Contact({ sectionTitle, icon }) {
             <SendMail fields={values} />
           </Box>
         </React.Fragment>
-      </CardPage>
+      </ModernPage>
     </React.Fragment>
   );
 }

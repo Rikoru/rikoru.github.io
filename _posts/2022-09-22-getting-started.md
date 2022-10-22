@@ -1,7 +1,6 @@
 ---
 title: 'Getting Started'
 date: '2022-09-22'
-coverImage: 'clouds.jpg'
 ---
 
 Rebuilding a site takes a lot of effort, even when you build it on top of Github Pages.
