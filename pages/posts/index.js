@@ -20,8 +20,9 @@ export default function Posts({ posts, sectionTitle, icon }) {
               <li key={slug}>
                 <Link href={`/posts/${slug}`}>
                   <a>
-                    <Typography variant="h3">{date}</Typography>
-                    <Typography variant="h4">{title}</Typography>
+                    <Typography variant="h3">
+                      ({date}) {title}
+                    </Typography>
                   </a>
                 </Link>
               </li>

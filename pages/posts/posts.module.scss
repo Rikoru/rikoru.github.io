@@ -7,6 +7,7 @@
   }
 
   padding: $innerPadding;
+  border: 2px solid red;
   max-width: $maxWidth;
   margin: 0 auto;
 }
@@ -17,4 +18,5 @@
 
 .postsList {
   list-style: none;
+  padding-left: 0;
 }

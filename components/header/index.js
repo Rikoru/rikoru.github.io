@@ -57,11 +57,13 @@ export default function Header() {
   );
 
   const navLinks = (
-    <Stack direction="row" spacing={2} className={styles.navLinks}>
+    <ul>
       {sections.map((item) => (
-        <Link href={'/' + item.route}>{item.name}</Link>
+        <li key={item.route}>
+          <Link href={'/' + item.route}>{item.name}</Link>
+        </li>
       ))}
-    </Stack>
+    </ul>
   );
 
   const container = () => window.document.body;
@@ -71,11 +73,7 @@ export default function Header() {
       <AppBar className={styles.header} component="nav" position="fixed">
         <Toolbar sx={{ display: 'flex' }}>
           <Box sx={{ flexGrow: 1, alignSelf: 'flex-start' }}>
-            <Link href="/">
-              <a>
-                <SiteTitle variant="h1" />
-              </a>
-            </Link>
+            <SiteTitle variant="h1" />
           </Box>
           {/* Mobile Button */}
           <IconButton
@@ -90,7 +88,13 @@ export default function Header() {
             <MenuRounded />
           </IconButton>
           {/* Regular Nav Links */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>{navLinks}</Box>
+          <Box
+            role="navigation"
+            className={styles.navbar}
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            {navLinks}
+          </Box>
         </Toolbar>
       </AppBar>
       {/* Drawer container */}

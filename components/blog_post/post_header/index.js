@@ -34,11 +34,11 @@ export default function PostHeader({ title, coverImage, date }) {
           </IconButton>
         </Link>
         <PostTitle title={title} />
-        <Stack direction="column" alignItems="flex-end">
+        <Stack direction="row" spacing={1}>
+          <Typography variant="subtitle2">{date}</Typography>
           <Avatar sx={{ width: 24, height: 24 }}>
             <Image src={profile} width={24} height={24} />
           </Avatar>
-          <Typography variant="subtitle2">{date}</Typography>
         </Stack>
       </Stack>
 

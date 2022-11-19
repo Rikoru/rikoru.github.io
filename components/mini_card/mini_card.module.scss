@@ -20,10 +20,11 @@ $dark: rgba(0, 0, 0, 0.87);
   font-family: $headerFont;
   color: $dark;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .miniCardSubtitle {
+  font-family: $headerFont;
   color: $faded;
 }
 
@@ -33,8 +34,14 @@ $dark: rgba(0, 0, 0, 0.87);
 }
 
 .miniCardFooter {
-  display: flex;
-  justify-content: flex-end;
   padding-top: $innerPadding;
   margin-bottom: -10px;
+
+  a {
+    color: $faded;
+  }
+  a:hover {
+    color: $textDark;
+    background-color: $accent;
+  }
 }

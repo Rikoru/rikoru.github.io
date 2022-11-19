@@ -24,7 +24,7 @@ const prepFooterSection = (pageLink) =>
   pageLink && (
     <React.Fragment>
       <div className={styles.miniCardFooter}>
-        <Divider />
+        <Divider sx={{ borderColor: 'rgba(0,0,0,0.14)' }} />
         <Stack direction="row" justifyContent="flex-end">
           <Link href={pageLink || ''} passHref>
             <IconButton aria-label="source">

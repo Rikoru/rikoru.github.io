@@ -3,7 +3,6 @@
 .header {
   // Outer
   position: fixed;
-  // align-self: center;
   background: $theme;
 
   & * a:hover {
@@ -20,21 +19,22 @@
       display: inline-flex;
       flex-direction: row;
       li {
+        &:not(:last-child) {
+          padding-right: 0.75rem;
+        }
+
         display: flex;
         flex-direction: row;
         align-items: center;
+        a {
+          font-family: $headerFont;
+          font-weight: 600;
+          font-size: 2rem;
+        }
       }
     }
 
     align-self: center;
-  }
-
-  .navLinks {
-    a {
-      font-family: $headerFont;
-      font-size: 400;
-      font-size: 2rem;
-    }
   }
 
   // Basic properties
@@ -46,4 +46,5 @@
 .headerLinkText > span {
   font-family: $headerFont;
   font-size: 1.6rem;
+  font-weight: 600;
 }
