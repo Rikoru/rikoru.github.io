@@ -19,15 +19,7 @@ export const CardPage = ({ sectionTitle, icon, children }) => (
 
 export const ModernPage = ({ sectionTitle, icon, children }) => (
   <React.Fragment>
-    <div className={styles.modernPageWrapper}>
-      <Stack direction="row" spacing={4} alignItems="center">
-        <Typography variant="h2">{sectionTitle}</Typography>
-        <Icon className={styles.modernPageIcon} aria-hidden="true">
-          {icon}
-        </Icon>
-      </Stack>
-      {children}
-    </div>
+    <div className={styles.modernPageWrapper}>{children}</div>
   </React.Fragment>
 );
 

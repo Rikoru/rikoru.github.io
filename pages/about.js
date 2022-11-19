@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import MuiDivider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import MuiAvatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';
 import Link from 'next/link';
 import Image from 'next/image';
 import profile from '../public/profile.png';
@@ -15,14 +15,9 @@ import { getSectionPropsByRoute } from '../constants/sections';
 import { ModernPage } from '../components/page_types';
 
 import { g } from '../constants/global';
-import theme from '../styles/theme';
 
 const Divider = styled(MuiDivider)({
   margin: '1rem 0',
-});
-
-const Avatar = styled(MuiAvatar)({
-  marginTop: theme.sizing.headerOffset,
 });
 
 export default function About({ sectionTitle, icon }) {
@@ -48,45 +43,41 @@ export default function About({ sectionTitle, icon }) {
         {title}
       </Typography>
       {subTitle && (
-        <Typography variant="h5" sx={{ lineHeight: '1.5rem' }}>
+        <Typography variant="h4" sx={{ lineHeight: '1.5rem' }}>
           {subTitle}
         </Typography>
       )}
     </Stack>
   );
 
+  const Intro = () => (
+    <Stack direction="row" justifyContent="center" alignItems="center">
+      <NameTitle
+        name={g.author}
+        title="Full-stack Software Developer"
+        subTitle="&amp; Technical Consultant"
+      />
+      <ProfilePicture profilePic={profile} profileSize={profileSize} />
+    </Stack>
+  );
+
   const about = (
     <div>
-      <Stack direction="row" justifyContent="center" alignItems="flex-start">
-        <NameTitle
-          name={g.author}
-          title="Full-stack Software Developer"
-          subTitle="Technical Consultant"
-        />
-        <ProfilePicture profilePic={profile} profileSize={profileSize} />
-      </Stack>
+      <Intro />
       <Divider />
-
       <Typography paragraph>
-        Suspendisse potenti. Curabitur dui magna, euismod dignissim pellentesque
-        ac, ultricies vel enim. Sed venenatis leo nec massa tincidunt, ut
-        imperdiet nibh venenatis. Aenean libero enim, accumsan ut laoreet et,
-        euismod sit amet orci. Donec in convallis neque. Aenean non tellus et
-        justo convallis tempor eu vel neque. Morbi eu blandit purus, sed mollis
-        dui. Aliquam vehicula pharetra bibendum. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia curae; Fusce sit amet
-        nisl ut mi aliquet porta vel vitae ligula. Quisque sed tristique orci.
-        Nullam sit amet quam eget orci facilisis mattis a non ligula.
+        Hi, I'm Mircea (pronounced "meer-cha"), and I'm a full-stack software
+        developer from the Vancouver, BC area. I studied at SFU and have been
+        working full-time for 3+ years. While I was in school I became
+        interested in NLP, AI, and ML towards the end of my degree, but haven't
+        had much of an opportunity to explore them since. Most of my front-end
+        experience is in React, though I have also worked with React Native,
+        Angular, and AngularJS. On the back-end, I've worked with Scala, Java,
+        and PHP, and I also have some Python experience.
       </Typography>
       <Typography paragraph>
-        Fusce consectetur facilisis velit, sit amet tincidunt tellus porta non.
-        Praesent sit amet pharetra sem. Ut blandit gravida lacus, at rhoncus
-        massa lobortis ut. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Vivamus vel imperdiet est. Sed vitae ullamcorper neque, sed
-        efficitur turpis. Cras ut blandit quam. In ac porta nulla. Curabitur
-        condimentum eget orci quis pellentesque. Donec cursus consectetur magna,
-        et fringilla dolor fringilla in. Fusce sed quam suscipit, malesuada
-        mauris quis, luctus dui.
+        I'm comfortable anywhere in the tech stack, and I'm currently looking
+        towards gaining more dev-ops skills.
       </Typography>
       <Link href="/contact" passHref>
         <a>
@@ -96,13 +87,8 @@ export default function About({ sectionTitle, icon }) {
 
       <Divider />
       <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
-        fringilla leo. Mauris mi orci, iaculis dictum lacus vitae, dapibus
-        rhoncus lorem. Nulla vitae viverra risus, vel imperdiet dui. Praesent
-        blandit massa et tempor fringilla. Fusce sit amet vulputate ex. Sed
-        rhoncus lacus sit amet mauris suscipit, et viverra libero varius.
-        Phasellus et dolor felis. Quisque varius cursus lectus vitae commodo.
-        Sed feugiat mi velit, nec blandit lacus scelerisque at.
+        My partner and I love to take our 2 dogs out on hikes and various other
+        adventures, which is something that BC has been great for.
       </Typography>
       <Typography paragraph>
         Nulla ut purus sollicitudin, consequat odio sed, ornare nulla. In
