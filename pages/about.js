@@ -66,53 +66,48 @@ export default function About({ sectionTitle, icon }) {
       <Intro />
       <Divider />
       <Typography paragraph>
-        Hi, I'm Mircea (pronounced "meer-cha"), and I'm a full-stack software
-        developer from the Vancouver, BC area. I studied at SFU and have been
-        working full-time for 3+ years. While I was in school I became
-        interested in NLP, AI, and ML towards the end of my degree, but haven't
-        had much of an opportunity to explore them since. Most of my front-end
-        experience is in React, though I have also worked with React Native,
-        Angular, and AngularJS. On the back-end, I've worked with Scala, Java,
-        and PHP, and I also have some Python experience.
+        Hi, I&apos;m Mircea (pronounced &quot;meer-cha&quot;), and I&apos;m a
+        full-stack software developer from the Vancouver, BC area. I studied at
+        SFU and have been working full-time for 3+ years. While I was in school
+        I became interested in NLP, AI, and ML towards the end of my degree, but
+        haven&apos;t had much of an opportunity to explore them since.
       </Typography>
       <Typography paragraph>
-        I'm comfortable anywhere in the tech stack, and I'm currently looking
-        towards gaining more dev-ops skills.
+        I&apos;m a full-stack developer with a passion for building high-quality
+        web and mobile applications. If you&apos;re looking for someone who can
+        bring a sense of humour to even the most complex coding challenges, then
+        you&apos;ve come to the right place.
+      </Typography>
+      <Typography paragraph>
+        I specialize in a range of technologies including React, React Native,
+        Node, Python, and Scala. I&apos;m a lifelong learner and am always
+        looking to expand my skill-set. I&apos;m constantly tinkering away on
+        side projects, and love to experiment with new tools and languages.
+      </Typography>
+      <Typography paragraph>
+        When it comes to my work, I&apos;m a stickler for detail, and take pride
+        in writing clean, well-documented code. That being said, I also believe
+        that levity is an essential ingredient in the development process. After
+        all, if you can&apos;t laugh at yourself when you&apos;re knee-deep in
+        debugging, then you&apos;re in for a tough ride.
+      </Typography>
+      <Typography paragraph>
+        In addition to my technical expertise, I also have a strong interest in
+        mentoring and knowledge sharing. I&apos;m always eager to help other
+        developers grow and learn, and I believe that building strong
+        relationships with others in the tech community is essential for
+        success. Whether you&apos;re a fellow developer looking for a
+        collaborator, or a business owner seeking to bring your vision to life,
+        I&apos;m excited to work with you. So, take a look around my portfolio
+        and get in touch.
       </Typography>
       <Link href="/contact" passHref>
         <a>
-          <Typography variant="h4">Reach out today!</Typography>
+          <Typography variant="h4">
+            Let&apos;s build something great together!
+          </Typography>
         </a>
       </Link>
-
-      <Divider />
-      <Typography paragraph>
-        My partner and I love to take our 2 dogs out on hikes and various other
-        adventures, which is something that BC has been great for.
-      </Typography>
-      <Typography paragraph>
-        Nulla ut purus sollicitudin, consequat odio sed, ornare nulla. In
-        pretium molestie tincidunt. Maecenas rutrum vulputate semper. Fusce
-        consectetur eros nec turpis facilisis, ac tempus elit iaculis. Nulla
-        facilisis pretium neque. Vestibulum placerat, massa eu hendrerit
-        egestas, tellus enim eleifend dolor, in pulvinar nisi tellus pretium
-        nunc. Suspendisse potenti. Proin ligula eros, congue vestibulum cursus
-        vel, suscipit nec risus. Vestibulum ornare lorem eget nunc egestas
-        sodales. Nullam gravida scelerisque leo, ac varius nisi bibendum et.
-        Cras pretium, tortor sed tristique malesuada, tortor metus interdum
-        ligula, eget viverra tellus libero a massa. Mauris dictum suscipit
-        volutpat. Maecenas bibendum ornare nisi, varius pellentesque urna
-        condimentum at. Fusce lobortis augue dignissim interdum rutrum. Nulla
-        facilisi. Sed semper bibendum accumsan.
-      </Typography>
-      <Typography paragraph>
-        Donec blandit neque sed libero interdum, sit amet venenatis ligula
-        tincidunt. In hendrerit quis turpis non porttitor. Praesent rhoncus
-        consequat augue, sit amet viverra metus sodales sit amet. Nunc rhoncus
-        condimentum massa fermentum gravida. Praesent id ligula mattis est
-        auctor malesuada a vel urna. Vestibulum sed enim efficitur, pretium ex
-        rutrum, vestibulum neque. Sed malesuada nisl a dolor finibus porttitor.{' '}
-      </Typography>
     </div>
   );
 
@@ -136,4 +131,9 @@ export async function getStaticProps() {
 About.propTypes = {
   sectionTitle: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  profilePic: PropTypes.string,
+  profileSize: PropTypes.number,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
 };
