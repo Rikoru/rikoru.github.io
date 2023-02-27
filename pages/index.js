@@ -1,13 +1,11 @@
-import { Typography } from '@mui/material';
 import React from 'react';
+import { ModernPage } from '../components/page_types';
+import { about } from './about';
 
 export default function Index() {
   return (
-    <React.Fragment>
-      <Typography paragraph>
-        This is where the index would go, need to figure out what that should
-        look like. Do that last, because content must come first.
-      </Typography>
-    </React.Fragment>
+    <ModernPage sectionTitle="home">
+      <React.Fragment>{about}</React.Fragment>
+    </ModernPage>
   );
 }

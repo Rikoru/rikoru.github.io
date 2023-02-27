@@ -1,6 +1,6 @@
 ---
 title: 'Getting Started'
-date: '2022-11-19'
+date: '2023-02-26'
 ---
 
 Rebuilding a site takes a lot of effort, even when you build it on top of Github Pages.

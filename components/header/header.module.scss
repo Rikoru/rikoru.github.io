@@ -23,13 +23,14 @@
           padding-right: 0.75rem;
         }
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         a {
-          font-family: $headerFont;
-          font-weight: 600;
-          font-size: 2rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          span {
+            margin-right: 0.25rem;
+          }
         }
       }
     }
@@ -43,8 +44,8 @@
   padding: $innerPadding 0;
 }
 
-.headerLinkText > span {
+.headerLinkText {
   font-family: $headerFont;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 400;
 }

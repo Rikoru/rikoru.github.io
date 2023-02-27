@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { g } from '../../constants/global';
 import styles from './header.module.scss';
 
 import Icon from '@mui/material/Icon';
@@ -12,13 +11,10 @@ import {
   ListItemText,
   ListItemButton,
   Toolbar,
-  Typography,
   ListItemIcon,
   IconButton,
-  Stack,
 } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 
@@ -56,11 +52,22 @@ export default function Header() {
     </Box>
   );
 
+  // TODO: Determine if using icons or text for nav links
+  const showIcon = true;
+  const showText = true;
+
   const navLinks = (
     <ul>
       {sections.map((item) => (
         <li key={item.route}>
-          <Link href={'/' + item.route}>{item.name}</Link>
+          <Link href={'/' + item.route}>
+            <a>
+              {showIcon && <Icon>{item.icon}</Icon>}
+              {showText && (
+                <span className={styles.headerLinkText}>{item.name}</span>
+              )}
+            </a>
+          </Link>
         </li>
       ))}
     </ul>
