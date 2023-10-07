@@ -22,7 +22,7 @@ h1, h2, h3, a {
 }
 
 li i.material-icons {
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 li a {
@@ -47,8 +47,16 @@ h2 {
 	font-size: 1.6rem;
 }
 
-h2 a i.material-icons {
+h2 i.material-icons {
 	font-size: 1.4rem;
+}
+
+h3 {
+	font-size: 1.4rem;
+}
+
+h3 i.material-icons {
+	font-size: 1.2rem;
 }
 
 p, p a, li {
