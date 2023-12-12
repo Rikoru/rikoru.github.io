@@ -6,7 +6,7 @@ FOOTER = _footer
 MAIN = main
 ETC = etc
 
-all: main etc
+all: main etc prettier-write prettier-check
 	@echo 'Build succeeded'
 
 main:
@@ -14,3 +14,10 @@ main:
 
 etc:
 	@cat $(SRC){$(HEADER),$(ETC),$(FOOTER)}.html > ./etc.html
+
+prettier-check:
+	@npx prettier -c ./*.html
+
+prettier-write:
+	@echo 'Running prettier'
+	@npx prettier -w ./*.html
